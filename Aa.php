@@ -228,9 +228,72 @@ $audios = (is_file($audFile) && filesize($audFile))
 
   </main>
 
-  <footer class="page-footer grey darken-3">
-    <!-- ... tu footer ... -->
-  </footer>
+ <!--pie de pagina-->
+ <footer class="page-footer grey darken-3">
+      <div class="row valign-wrapper">
+        <div class="col s12 m5">
+          <h5 class="white-text">Sede Centro</h5>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.2495717377706!2d-73.36888772271514!3d5.529946980140521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a7dd370d9df2f%3A0x8f347d9ae4bfe052!2sInstituto%20Cenis%20Tunja!5e0!3m2!1ses!2sco!4v1746559382054!5m2!1ses!2sco"
+            width="100%"
+            height="300"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div class="col s12 m5">
+          <h5 class="white-text">Sede Las Américas</h5>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3971.2751122815375!2d-73.36562661627082!3d5.526139612127951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zMTI1OSBDbC4gMTMswqBUdW5qYSwgQm95YWPDoQ!5e0!3m2!1ses!2sco!4v1746560054815!5m2!1ses!2sco"
+            width="100%"
+            height="300"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="col s12 m3 center">
+          <h5 class="white-text">Contáctanos:</h5>
+          <a href="https://www.facebook.com/share/1HC8LmKRYK/"
+            ><i class="icon fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/cenistunja_?igsh=MXV0eWowNnBleTlnZw=="
+            ><i class="icon fab fa-instagram"></i
+          ></a>
+          <h6>Cel: (+57) 315 363 0071</h6>
+        </div>
+      </div>
+      <div class="footer-copyright grey darken-4">
+        <div class="container">© 2025 MARITZA</div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+      const carousel = document.querySelector(".carousel.carousel-slider");
+      M.Carousel.init(carousel, {
+        fullWidth: true,
+        indicators: true,
+      });
+
+      setInterval(() => {
+        const instance = M.Carousel.getInstance(carousel);
+        instance.next();
+      }, 3000);
+    </script>
+  </body>
+</html>
+
 
   <!-- JS Materialize -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
