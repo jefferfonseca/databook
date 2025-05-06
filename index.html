@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataBook</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.ico" />
+
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav-wrapper light-blue darken-4">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo"
+            ><img src="assets/images/logo_pro.png" width="85px"
+          /></a>
+          <span class="nav-title center-align">DATABOOK</span>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="index.html">Inicio</a></li>
+            <li>
+              <a href="tecnicos.html">Técnicos</a>
+            </li>
+            <li><a href="nosotros.html">Sobre nosotros</a></li>
+            <li><a href="interés.html">Libros de interés</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="contenido">
+      <h1 class="center titulo">¡Bienvenidos Comunidad Cenista!</h1>
+
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="valign fondo">
+            <p>
+              Nos complace ofrecer acceso a una gran colección de recursos
+              multimedia, diseñados para enriquecer la experiencia de
+              aprendizaje. En este repositorio podrás encontrar:
+            </p>
+            <ul class="lista">
+              <li>Videos educativos.</li>
+              <li>Audios y podcasts.</li>
+              <li>Libros.</li>
+            </ul>
+            <p>
+              Todo el contenido está organizado por áreas temáticas, facilitando
+              su búsqueda y acceso. En este espacio, buscamos promover el
+              aprendizaje colaborativo, la innovación y la creatividad. Explora,
+              aprende y comparte.
+            </p>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="carousel carousel-slider">
+            <a class="carousel-item" href="#one!"
+              ><img src="assets/images/tecnicos/Aa.png"
+            /></a>
+            <a class="carousel-item" href="#two!"
+              ><img src="assets/images/tecnicos/API.png"
+            /></a>
+            <a class="carousel-item" href="#three!"
+              ><img src="assets/images/tecnicos/CF.png"
+            /></a>
+            <a class="carousel-item" href="#four!"
+              ><img src="assets/images/tecnicos/DG.png"
+            /></a>
+            <a class="carousel-item" href="#five!"
+              ><img src="assets/images/tecnicos/I.png"
+            /></a>
+            <a class="carousel-item" href="#one!"
+              ><img src="assets/images/tecnicos/MV.png"
+            /></a>
+            <a class="carousel-item" href="#three!"
+              ><img src="assets/images/tecnicos/S.png"
+            /></a>
+            <a class="carousel-item" href="#four!"
+              ><img src="assets/images/tecnicos/V.png"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--pie de pagina-->
+    <footer class="page-footer grey darken-3">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">......</h5>
+          </div>
+          <div class="col l4 offset-l2 s12 center">
+            <h5 class="white-text">Contáctanos:</h5>
+            <a href="https://www.facebook.com/share/1HC8LmKRYK/"
+              ><i class="icon fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/cenistunja_?igsh=MXV0eWowNnBleTlnZw=="
+              ><i class="icon fab fa-instagram"></i
+            ></a>
+            <h6>Cel: (+57) 315 363 0071</h6>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright grey darken-4">
+        <div class="container">
+          © 2025 MARITZA
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+      const carousel = document.querySelector(".carousel.carousel-slider");
+      M.Carousel.init(carousel, {
+        fullWidth: true,
+        indicators: true,
+      });
+
+      setInterval(() => {
+        const instance = M.Carousel.getInstance(carousel);
+        instance.next();
+      }, 3000);
+    </script>
+  </body>
+</html>
