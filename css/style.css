@@ -83,14 +83,15 @@ p {
 .card {
   transition: all 0.2s ease-in-out;
 }
+
 .tecnicos .card:hover {
-  transform: rotate(-1deg);
+  transform: translatey(-5px);
   opacity: 50%;
 }
 
 .titlulo-recursos {
-  font-weight: 700;
-  padding-left: 20px;
+  font-weight: 00;
+  padding-left: 10px;
 }
 .collapsible-body {
   backdrop-filter: blur(20px);
