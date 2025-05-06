@@ -24,32 +24,51 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 
 <body class="contenido">
   <header>
-    <nav class="nav-wrapper light-blue darken-4">
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">
-          <img src="assets/images/logo_pro.png" width="85px" />
-        </a>
-        <span class="nav-title center-align">DATABOOK</span>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="tecnicos.html">Técnicos</a></li>
-          <li><a href="nosotros.html">Sobre nosotros</a></li>
-          <li><a href="interés.html">Libros de interés</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <main class="container">
-    <h1 class="center-align">Técnico laboral en Asistente Administrativo</h1>
-    <p>
+      <nav class="nav-wrapper">
+        <div class="nav-inner">
+          <!-- Zona izquierda: logo -->
+          <div class="nav-left">
+            <a href="#" class="brand-logo">
+              <img src="assets/images/logo_pro.png" alt="Logo"/>
+            </a>
+          </div>
+  
+          <!-- Zona central: título -->
+          <div class="nav-center">
+            <span class="nav-title">DATABOOK</span>
+          </div>
+  
+          <!-- Zona derecha: menú -->
+          <div class="nav-right">
+            <a href="#" data-target="mobile-menu" class="sidenav-trigger">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down nav-links">
+              <li><a href="index.html">Inicio</a></li>
+              <li class="active"><a href="tecnicos.html">Técnicos</a></li>
+              <li><a href="nosotros.html">Sobre nosotros</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+  
+    <!-- Sidenav para móvil -->
+    <ul class="sidenav" id="mobile-menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li class="active"><a href="tecnicos.html">Técnicos</a></li>
+      <li><a href="nosotros.html">Sobre nosotros</a></li>
+    </ul>
+  
+  <h1 class="center-align">Técnico Laboral en Asistente Administrativo</h1>
+  <p class="descripcion ">
       El técnico laboral en asistente administrativo está en la capacidad de
       gestionar información brindando solución a las necesidades organizacionales
       con ética, eficiencia, calidad humana e innovación en las áreas de procesos
       administrativos contables, producción documental, análisis estadísticos y
       recursos humanos.
     </p>
-
+  <main class="container">
     <!-- Inicio del collapsible dinámico -->
     <ul class="collapsible popout">
       <?php
