@@ -64,14 +64,10 @@
           </ul>
         
             <h1 class="center-align">
-              Técnico laboral en atención a la primera infancia
+              Técnico Laboral en Atención a la Primera Infancia
             </h1>
             <p class="descripcion">
-              El técnico laboral en asistente administrativo está en la capacidad de
-              gestionar información brindando solución a las necesidades
-              organizacionales con ética, eficiencia, calidad humana e innovación en
-              las áreas de procesos administrativos contables, producción documental,
-              análisis estadísticos y recursos humanos.
+            El técnico laboral por competencias en atención a la primera infancia desarrolla actividades para llevar a cabo el cuidado integral de los niños y niñas, creando ambientes y material didáctico que contribuyan a la estimulación, desarrollo, crecimiento intelectual, físico y social
             </p>
 
         <main class="container">

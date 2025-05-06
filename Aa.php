@@ -57,7 +57,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
     <ul class="sidenav" id="mobile-menu">
       <li><a href="index.html">Inicio</a></li>
       <li class="active"><a href="tecnicos.html">Técnicos</a></li>
-      <li><a href="nosotros.html">Sobre nosotros</a></li>
+      <li ><a href="nosotros.html">Sobre nosotros</a></li>
     </ul>
   
   <h1 class="center-align">Técnico Laboral en Asistente Administrativo</h1>
