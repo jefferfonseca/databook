@@ -1,6 +1,6 @@
 <?php
 // Carpeta del técnico que quieres mostrar
-$tecnico = 'Asistente Administrativo';
+$tecnico = 'Módulos Generales';
 $rutaModulos = "assets/tecnicos/{$tecnico}/";
 // Extensiones de libros
 $extLibros = ['pdf', 'docx', 'pptx'];
@@ -60,14 +60,15 @@ $extLibros = ['pdf', 'docx', 'pptx'];
       <li><a href="nosotros.html">Sobre nosotros</a></li>
     </ul>
   
-  <h1 class="center-align">Técnico Laboral en Asistente Administrativo</h1>
-  <p class="descripcion">
-      El técnico laboral en asistente administrativo está en la capacidad de
-      gestionar información brindando solución a las necesidades organizacionales
-      con ética, eficiencia, calidad humana e innovación en las áreas de procesos
-      administrativos contables, producción documental, análisis estadísticos y
-      recursos humanos.
-    </p>
+    
+    <h1 class="center-align">Módulos Generales</h1>
+      <p class="descripcion">
+        El técnico laboral en asistente administrativo está en la capacidad de
+        gestionar información brindando solución a las necesidades
+        organizacionales con ética, eficiencia, calidad humana e innovación en
+        las áreas de procesos administrativos contables, producción documental,
+        análisis estadísticos y recursos humanos.
+      </p>
   <main class="container">
     <!-- Inicio del collapsible dinámico -->
     <ul class="collapsible popout">
