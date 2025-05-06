@@ -100,7 +100,7 @@ $extLibros   = ['pdf','docx','pptx'];
                      <span class="cards-container">
                      <a href="<?= $url ?>" target="_blank" rel="noopener noreferrer">
                         <div class="cards tecnicos">
-                          <img src="assets/images/pdf.png" alt="PDF" style="width:100%" />
+                          <img src="assets/images/libros.jpg" alt="PDF" style="width:100%" />
                           <div class="opciones">
                             <button>Abrir</button>
                             <button>Descargar</button>
@@ -142,7 +142,7 @@ $extLibros   = ['pdf','docx','pptx'];
                     <span class="cards-container">
                     <a href="<?= $safeUrl ?>" target="_blank" rel="noopener noreferrer">
                         <div class="cards tecnicos">
-                          <img src="assets/images/video.png" alt="Video" style="width:100%" />
+                          <img src="assets/images/videos.jpg" alt="Video" style="width:100%" />
                           <div class="opciones">
                             <button>Abrir</button>
                           </div>
@@ -183,7 +183,7 @@ $extLibros   = ['pdf','docx','pptx'];
                     <span class="cards-container">
                     <a href="<?= $safeUrl ?>" target="_blank" rel="noopener noreferrer">
                         <div class="cards tecnicos">
-                          <img src="assets/images/audio.png" alt="Audio" style="width:100%" />
+                          <img src="assets/images/audios.jpg" alt="Audio" style="width:100%" />
                           <div class="opciones">
                             <button>Abrir</button>
                           </div>
