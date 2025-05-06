@@ -1,12 +1,13 @@
-<?php 
+<?php
 // Carpeta del técnico que quieres mostrar
-$tecnico     = 'Asistente Administrativo';
+$tecnico = 'Asistente Administrativo';
 $rutaModulos = "assets/tecnicos/{$tecnico}/";
 // Extensiones de libros
-$extLibros   = ['pdf','docx','pptx'];
+$extLibros = ['pdf', 'docx', 'pptx'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,22 +16,10 @@ $extLibros   = ['pdf','docx','pptx'];
 
   <!-- Materialize CSS y tu CSS -->
   <link rel="stylesheet" href="css/style.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-  />
-  <link
-    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 
 <body class="contenido">
@@ -64,145 +53,145 @@ $extLibros   = ['pdf','docx','pptx'];
     <!-- Inicio del collapsible dinámico -->
     <ul class="collapsible popout">
       <?php
-        $modulos = is_dir($rutaModulos)
-          ? array_filter(glob($rutaModulos . '*'), 'is_dir')
-          : [];
+      $modulos = is_dir($rutaModulos)
+        ? array_filter(glob($rutaModulos . '*'), 'is_dir')
+        : [];
 
-        foreach ($modulos as $modPath):
-          $modName = basename($modPath);
-      ?>
-      <li>
-        <div class="collapsible-header">
-          <i class="material-icons">folder</i>
-          <?= htmlspecialchars($modName) ?>
-        </div>
-        <div class="collapsible-body">
-          <ul class="collapsible">
+      foreach ($modulos as $modPath):
+        $modName = basename($modPath);
+        ?>
+        <li>
+          <div class="collapsible-header">
+            <i class="material-icons">folder</i>
+            <?= htmlspecialchars($modName) ?>
+          </div>
+          <div class="collapsible-body">
+            <ul class="collapsible">
 
-            <!-- ——— Libros ——— -->
-            <?php
-              $libros = glob("$modPath/*.{".implode(',', $extLibros)."}", GLOB_BRACE);
-            ?>
-            <li>
-              <div class="collapsible-header">
-                <i class="material-icons">menu_book</i> Libros
-              </div>
-              <div class="collapsible-body">
-                <?php if (empty($libros)): ?>
-                  <p>No hay archivos en esta categoría.</p>
-                <?php else: ?>
-                  <div class="row">
-                    <?php foreach ($libros as $file): 
-                      $name = basename($file);
-                      $url  = $file;
-                    ?>
-                    <div class="col s12 m3 l4">
-                     <span class="cards-container">
-                     <a href="<?= $url ?>" target="_blank" rel="noopener noreferrer">
-                        <div class="cards tecnicos">
-                          <img src="assets/images/libros.jpg" alt="PDF" style="width:100%" />
-                          <div class="opciones">
-                            <button>Abrir</button>
-                            <button>Descargar</button>
-                          </div>
-                          <div class="cards-body">
-                            <h4 class="titlulo-recursos"><?= htmlspecialchars($name) ?></h4>
-                          </div>
+              <!-- ——— Libros ——— -->
+              <?php
+              $libros = glob("$modPath/*.{" . implode(',', $extLibros) . "}", GLOB_BRACE);
+              ?>
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">menu_book</i> Libros
+                </div>
+                <div class="collapsible-body">
+                  <?php if (empty($libros)): ?>
+                    <p>No hay archivos en esta categoría.</p>
+                  <?php else: ?>
+                    <div class="row">
+                      <?php foreach ($libros as $file):
+                        $name = basename($file);
+                        $url = $file;
+                        ?>
+                        <div class="col s12 m3 l4">
+                          <span class="cards-container">
+                            <a href="<?= $url ?>" target="_blank" rel="noopener noreferrer">
+                              <div class="cards tecnicos">
+                                <img src="assets/images/libros.jpg" alt="PDF" style="width:100%" />
+                                <div class="opciones">
+                                  <button>Abrir</button>
+                                  <button>Descargar</button>
+                                </div>
+                                <div class="cards-body">
+                                  <h4 class="titlulo-recursos"><?= htmlspecialchars($name) ?></h4>
+                                </div>
+                              </div>
+                            </a>
+                          </span>
                         </div>
-                      </a>
-                     </span>
+                      <?php endforeach; ?>
                     </div>
-                    <?php endforeach; ?>
-                  </div>
-                <?php endif; ?>
-              </div>
-            </li>
+                  <?php endif; ?>
+                </div>
+              </li>
 
-            <!-- ——— Videos ——— -->
-            <?php
+              <!-- ——— Videos ——— -->
+              <?php
               $vidFile = "$modPath/videos.txt";
-              $videos  = (is_file($vidFile) && filesize($vidFile))
-                       ? file($vidFile, FILE_IGNORE_NEW_LINES|FILE_SKIP_EMPTY_LINES)
-                       : [];
-            ?>
-            <li>
-              <div class="collapsible-header">
-                <i class="material-icons">ondemand_video</i> Videos
-              </div>
-              <div class="collapsible-body">
-                <?php if (empty($videos)): ?>
-                  <p>No hay archivos en esta categoría.</p>
-                <?php else: ?>
-                  <div class="row">
-                    <?php foreach ($videos as $url):
-                      $safeUrl  = htmlspecialchars($url, ENT_QUOTES);
-                      $filename = basename(parse_url($url, PHP_URL_PATH));
-                    ?>
-                    <div class="col s12 m3 l4">
-                    <span class="cards-container">
-                    <a href="<?= $safeUrl ?>" target="_blank" rel="noopener noreferrer">
-                        <div class="cards tecnicos">
-                          <img src="assets/images/videos.jpg" alt="Video" style="width:100%" />
-                          <div class="opciones">
-                            <button>Abrir</button>
-                          </div>
-                          <div class="cards-body">
-                            <h4 class="titlulo-recursos"><?= htmlspecialchars($filename) ?></h4>
-                          </div>
+              $videos = (is_file($vidFile) && filesize($vidFile))
+                ? file($vidFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES)
+                : [];
+              ?>
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">ondemand_video</i> Videos
+                </div>
+                <div class="collapsible-body">
+                  <?php if (empty($videos)): ?>
+                    <p>No hay archivos en esta categoría.</p>
+                  <?php else: ?>
+                    <div class="row">
+                      <?php foreach ($videos as $url):
+                        $safeUrl = htmlspecialchars($url, ENT_QUOTES);
+                        $filename = basename(parse_url($url, PHP_URL_PATH));
+                        ?>
+                        <div class="col s12 m3 l4">
+                          <span class="cards-container">
+                            <a href="<?= $safeUrl ?>" target="_blank" rel="noopener noreferrer">
+                              <div class="cards tecnicos">
+                                <img src="assets/images/videos.jpg" alt="Video" style="width:100%" />
+                                <div class="opciones">
+                                  <button>Abrir</button>
+                                </div>
+                                <div class="cards-body">
+                                  <h4 class="titlulo-recursos"><?= htmlspecialchars($filename) ?></h4>
+                                </div>
+                              </div>
+                            </a>
+                          </span>
                         </div>
-                      </a>
-                    </span>
+                      <?php endforeach; ?>
                     </div>
-                    <?php endforeach; ?>
-                  </div>
-                <?php endif; ?>
-              </div>
-            </li>
+                  <?php endif; ?>
+                </div>
+              </li>
 
-            <!-- ——— Audios ——— -->
-            <?php
+              <!-- ——— Audios ——— -->
+              <?php
               $audFile = "$modPath/audios.txt";
-              $audios  = (is_file($audFile) && filesize($audFile))
-                       ? file($audFile, FILE_IGNORE_NEW_LINES|FILE_SKIP_EMPTY_LINES)
-                       : [];
-            ?>
-            <li>
-              <div class="collapsible-header">
-                <i class="material-icons">headset</i> Audios
-              </div>
-              <div class="collapsible-body">
-                <?php if (empty($audios)): ?>
-                  <p>No hay archivos en esta categoría.</p>
-                <?php else: ?>
-                  <div class="row">
-                    <?php foreach ($audios as $url):
-                      $safeUrl  = htmlspecialchars($url, ENT_QUOTES);
-                      $filename = basename(parse_url($url, PHP_URL_PATH));
-                    ?>
-                    <div class="col s12 m3 l4">
-                    <span class="cards-container">
-                    <a href="<?= $safeUrl ?>" target="_blank" rel="noopener noreferrer">
-                        <div class="cards tecnicos">
-                          <img src="assets/images/audios.jpg" alt="Audio" style="width:100%" />
-                          <div class="opciones">
-                            <button>Abrir</button>
-                          </div>
-                          <div class="cards-body">
-                            <h4 class="titlulo-recursos"><?= htmlspecialchars($filename) ?></h4>
-                          </div>
-                        </div>
-                      </a>
-                    </span>
-                    </div>
-                    <?php endforeach; ?>
-                  </div>
-                <?php endif; ?>
-              </div>
-            </li>
+              $audios = (is_file($audFile) && filesize($audFile))
+                ? file($audFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES)
+                : [];
+              ?>
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">headset</i> Audios
+                </div>
+                <div class="collapsible-body">
+                  <?php if (empty($audios)): ?>
+                    <p>No hay archivos en esta categoría.</p>
+                  <?php else: ?>
+                    <div class="row">
+                      <?php foreach ($audios as $url):
+                        $safeUrl = htmlspecialchars($url, ENT_QUOTES);
+                        $filename = basename(parse_url($url, PHP_URL_PATH));
+                        ?>
+                        <div class="col s12 m3 l4">
+                          <span class="cards-container">
+                            <div class="cards tecnicos">
+                              <img src="assets/images/audios.jpg" alt="Audio" style="width:100%" />
+                              <div class="cards-body">
+                                <h4 class="titlulo-recursos"><?= htmlspecialchars($filename) ?></h4>
+                                <audio controls style="width: 100%; margin-top: 10px;">
+                                  <source src="<?= $safeUrl ?>" type="audio/mpeg">
+                                  Tu navegador no soporta la reproducción de audio.
+                                </audio>
+                              </div>
+                            </div>
 
-          </ul>
-        </div>
-      </li>
+                          </span>
+                        </div>
+                      <?php endforeach; ?>
+                    </div>
+                  <?php endif; ?>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </li>
       <?php endforeach; ?>
     </ul>
     <!-- Fin del collapsible dinámico -->
@@ -217,10 +206,11 @@ $extLibros   = ['pdf','docx','pptx'];
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function(){
+    document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.collapsible');
       M.Collapsible.init(elems);
     });
   </script>
 </body>
+
 </html>
