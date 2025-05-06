@@ -148,46 +148,57 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                 </div>
               </li>
 
-              <!-- ——— Audios ——— -->
-              <?php
-              $audFile = "$modPath/audios.txt";
-              $audios = (is_file($audFile) && filesize($audFile))
-                ? file($audFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES)
-                : [];
-              ?>
-              <li>
-                <div class="collapsible-header">
-                  <i class="material-icons">headset</i> Audios
-                </div>
-                <div class="collapsible-body">
-                  <?php if (empty($audios)): ?>
-                    <p>No hay archivos en esta categoría.</p>
-                  <?php else: ?>
-                    <div class="row">
-                      <?php foreach ($audios as $url):
-                        $safeUrl = htmlspecialchars($url, ENT_QUOTES);
-                        $filename = basename(parse_url($url, PHP_URL_PATH));
-                        ?>
-                        <div class="col s12 m3 l4">
-                          <span class="cards-container">
-                            <div class="cards tecnicos">
-                              <img src="assets/images/audios.jpg" alt="Audio" style="width:100%" />
-                              <div class="cards-body">
-                                <h4 class="titlulo-recursos"><?= htmlspecialchars($filename) ?></h4>
-                                <audio controls style="width: 100%; margin-top: 10px;">
-                                  <source src="<?= $safeUrl ?>" type="audio/mpeg">
-                                  Tu navegador no soporta la reproducción de audio.
-                                </audio>
-                              </div>
-                            </div>
+  <!-- ——— Audios ——— -->
+<?php
+$audFile = "$modPath/audios.txt";
+$audios = (is_file($audFile) && filesize($audFile))
+  ? file($audFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES)
+  : [];
+?>
+<li>
+  <div class="collapsible-header">
+    <i class="material-icons">headset</i> Audios
+  </div>
+  <div class="collapsible-body">
+    <?php if (empty($audios)): ?>
+      <p>No hay archivos en esta categoría.</p>
+    <?php else: ?>
+      <div class="row">
+        <?php foreach ($audios as $linea):
+          $partes = explode('|', $linea, 2);
+          $titulo = isset($partes[0]) ? trim($partes[0]) : 'Sin nombre';
+          $enlace = isset($partes[1]) ? trim($partes[1]) : '';
+          if (!$enlace) continue;
 
-                          </span>
-                        </div>
-                      <?php endforeach; ?>
+          $safeUrl = htmlspecialchars($enlace, ENT_QUOTES);
+          $isLocal = !preg_match('/^https?:\/\//', $enlace);
+        ?>
+          <div class="col s12 m3 l4">
+            <span class="cards-container">
+              <div class="cards tecnicos">
+                <img src="assets/images/audios.jpg" alt="Audio" style="width:100%" />
+                <div class="cards-body">
+                  <h4 class="titlulo-recursos"><?= htmlspecialchars($titulo) ?></h4>
+                  <?php if ($isLocal): ?>
+                    <audio controls style="width: 100%; margin-top: 10px;">
+                      <source src="<?= $safeUrl ?>" type="audio/mpeg">
+                      Tu navegador no soporta la reproducción de audio.
+                    </audio>
+                  <?php else: ?>
+                    <div class="opciones" style="margin-top: 10px;">
+                      <a class="btn blue" href="<?= $safeUrl ?>" target="_blank" rel="noopener noreferrer">Abrir</a>
                     </div>
                   <?php endif; ?>
                 </div>
-              </li>
+              </div>
+            </span>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    <?php endif; ?>
+  </div>
+</li>
+
 
             </ul>
           </div>
