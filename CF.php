@@ -81,14 +81,14 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 
       foreach ($modulos as $modPath):
         $modName = basename($modPath);
-        ?>
+      ?>
         <li>
           <div class="collapsible-header">
             <i class="material-icons">folder</i>
             <?= htmlspecialchars($modName) ?>
           </div>
           <div class="collapsible-body">
-            <ul class="collapsible">
+            <ul class="collapsible popout">
 
               <!-- ——— Libros ——— -->
               <?php
@@ -106,20 +106,19 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                       <?php foreach ($libros as $file):
                         $name = basename($file);
                         $url = $file;
-                        ?>
+                      ?>
                         <div class="col s12 m3 l4">
                           <span class="cards-container">
-                            <a href="<?= $url ?>" target="_blank" rel="noopener noreferrer">
-                              <div class="cards tecnicos">
-                                <img src="assets/images/libros.jpg" alt="PDF" style="width:100%" />
-                                <div class="opciones" style="margin-top: 0.5em;">
-                                  <a href="<?= $url ?>" target="_blank" class="btn blue">Abrir</a>
-                                  <a href="<?= $url ?>" download class="btn green">Descargar</a>
-                                </div>
-                                <div class="cards-body">
-                                  <h4 class="titlulo-recursos"><?= htmlspecialchars($name) ?></h4>
-                                </div>
+                            <div class="cards tecnicos">
+                              <img src="assets/images/libros.jpg" alt="PDF" style="width:100%" />
+                              <div class="opciones" style="margin-top: 0.5em;">
+                                <a href="<?= $url ?>" target="_blank">Abrir</a>
+                                <a href="<?= $url ?>" download>Descargar</a>
                               </div>
+                              <div class="cards-body">
+                                <h4 class="titlulo-recursos"><?= htmlspecialchars($name) ?></h4>
+                              </div>
+                            </div>
                             </a>
                           </span>
                         </div>
@@ -148,19 +147,18 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                       <?php foreach ($videos as $url):
                         $safeUrl = htmlspecialchars($url, ENT_QUOTES);
                         $filename = basename(parse_url($url, PHP_URL_PATH));
-                        ?>
+                      ?>
                         <div class="col s12 m3 l4">
                           <span class="cards-container">
-                            <a href="<?= $safeUrl ?>" target="_blank" rel="noopener noreferrer">
-                              <div class="cards tecnicos">
-                                <img src="assets/images/videos.jpg" alt="Video" style="width:100%" />
-                                <div class="opciones" style="margin-top: 0.5em;">
-                                  <a href="<?= $url ?>" target="_blank" class="btn blue">Abrir</a>
-                                </div>
-                                <div class="cards-body">
-                                  <h4 class="titlulo-recursos"><?= htmlspecialchars($filename) ?></h4>
-                                </div>
+                            <div class="cards tecnicos">
+                              <img src="assets/images/videos.jpg" alt="Video" style="width:100%" />
+                              <div class="opciones" style="margin-top: 0.5em;">
+                                <a href="<?= $url ?>" target="_blank">Abrir</a>
                               </div>
+                              <div class="cards-body">
+                                <h4 class="titlulo-recursos"><?= htmlspecialchars($filename) ?></h4>
+                              </div>
+                            </div>
                             </a>
                           </span>
                         </div>
@@ -195,7 +193,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 
                         $safeUrl = htmlspecialchars($enlace, ENT_QUOTES);
                         $isLocal = !preg_match('/^https?:\/\//', $enlace);
-                        ?>
+                      ?>
                         <div class="col s12 m3 l4">
                           <span class="cards-container">
                             <div class="cards tecnicos">
@@ -209,7 +207,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                                   </audio>
                                 <?php else: ?>
                                   <div class="opciones" style="margin-top: 10px;">
-                                    <a class="btn blue" href="<?= $safeUrl ?>" target="_blank"
+                                    <a href="<?= $safeUrl ?>" target="_blank"
                                       rel="noopener noreferrer">Abrir</a>
                                   </div>
                                 <?php endif; ?>
@@ -292,7 +290,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.collapsible');
     M.Collapsible.init(elems);
   });

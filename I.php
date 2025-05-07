@@ -86,7 +86,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
             <?= htmlspecialchars($modName) ?>
           </div>
           <div class="collapsible-body">
-            <ul class="collapsible">
+           <ul class="collapsible popout">
 
               <!-- ——— Libros ——— -->
               <?php
@@ -107,12 +107,11 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                         ?>
                         <div class="col s12 m3 l4">
                           <span class="cards-container">
-                            <a href="<?= $url ?>" target="_blank" rel="noopener noreferrer">
                               <div class="cards tecnicos">
                                 <img src="assets/images/libros.jpg" alt="PDF" style="width:100%" />
                                 <div class="opciones" style="margin-top: 0.5em;">
-                                  <a href="<?= $url ?>" target="_blank" class="btn blue">Abrir</a>
-                                  <a href="<?= $url ?>" download class="btn green">Descargar</a>
+                                  <a href="<?= $url ?>" target="_blank" >Abrir</a>
+                                  <a href="<?= $url ?>" download >Descargar</a>
                                 </div>
                                 <div class="cards-body">
                                   <h4 class="titlulo-recursos"><?= htmlspecialchars($name) ?></h4>
@@ -149,11 +148,10 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                         ?>
                         <div class="col s12 m3 l4">
                           <span class="cards-container">
-                            <a href="<?= $safeUrl ?>" target="_blank" rel="noopener noreferrer">
                               <div class="cards tecnicos">
                                 <img src="assets/images/videos.jpg" alt="Video" style="width:100%" />
                                 <div class="opciones" style="margin-top: 0.5em;">
-                                  <a href="<?= $url ?>" target="_blank" class="btn blue">Abrir</a>
+                                  <a href="<?= $url ?>" target="_blank" >Abrir</a>
                                 </div>
                                 <div class="cards-body">
                                   <h4 class="titlulo-recursos"><?= htmlspecialchars($filename) ?></h4>
@@ -207,7 +205,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                                   </audio>
                                 <?php else: ?>
                                   <div class="opciones" style="margin-top: 10px;">
-                                    <a class="btn blue" href="<?= $safeUrl ?>" target="_blank"
+                                    <a  href="<?= $safeUrl ?>" target="_blank"
                                       rel="noopener noreferrer">Abrir</a>
                                   </div>
                                 <?php endif; ?>
