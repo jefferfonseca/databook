@@ -63,11 +63,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
   <h1 class="center-align">Técnico Laboral en <?php echo $tecnico; ?></h1>
   <div class="container">
     <p class="descripcion">
-      El técnico laboral en asistente administrativo está en la capacidad de
-      gestionar información brindando solución a las necesidades
-      organizacionales con ética, eficiencia, calidad humana e innovación en
-      las áreas de procesos administrativos contables, producción documental,
-      análisis estadísticos y recursos humanos.
+    El técnico laboral en sistemas desarrolla habilidades para llevar a cabo con eficiencia y eficacia mantenimientos, soporte, elaborar sistemas de información empresarial, realizar páginas web estáticas aplicando diseño y efectos especiales, emplea, distribuye y comparte recursos informáticos de las organizaciones o emprendimientos, tales como redes, bases de datos, salvaguardando la información aplicando protocolos de seguridad de la información
     </p>
   </div>
   <main class="container">
@@ -260,8 +256,9 @@ $extLibros = ['pdf', 'docx', 'pptx'];
       </div>
     </div>
     <div class="footer-copyright grey darken-4">
-      <div class="container center">Copyright © 2025 
-<br><b>| Databook |</b> <br>Todos los derechos reservados.</div>
+      <div class="container center">Copyright © 2025
+        <br><b>| DATABOOK |</b> <br>Todos los derechos reservados.
+      </div>
     </div>
   </footer>
 

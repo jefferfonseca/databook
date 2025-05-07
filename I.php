@@ -62,11 +62,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
   <h1 class="center-align">Técnico Laboral en <?php echo $tecnico; ?></h1>
   <div class="container">
     <p class="descripcion">
-      El técnico laboral en asistente administrativo está en la capacidad de
-      gestionar información brindando solución a las necesidades
-      organizacionales con ética, eficiencia, calidad humana e innovación en
-      las áreas de procesos administrativos contables, producción documental,
-      análisis estadísticos y recursos humanos.
+    El egresado del programa conocimientos académicos pro-eficiencia en inglés desarrolla las competencias en las cuatro habilidades (speaking, listening, writing and Reading) establecidas según el marco común Europeo, preparado para desarrollar actividades descritas en el campo de acción del programa.
     </p>
   </div>
   <main class="container">
@@ -259,8 +255,9 @@ $extLibros = ['pdf', 'docx', 'pptx'];
       </div>
     </div>
     <div class="footer-copyright grey darken-4">
-      <div class="container center">Copyright © 2025 
-<br><b>| Databook |</b> <br>Todos los derechos reservados.</div>
+      <div class="container center">Copyright © 2025
+        <br><b>| DATABOOK |</b> <br>Todos los derechos reservados.
+      </div>
     </div>
   </footer>
 

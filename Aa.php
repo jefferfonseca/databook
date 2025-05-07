@@ -65,7 +65,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
     <p class="descripcion">
       El técnico laboral en asistente administrativo está en la capacidad de
       gestionar información brindando solución a las necesidades organizacionales
-      con ética, eficiencia, calidad humana e innovación en las áreas de procesos
+      con ética, eficiencia, calidad humana e innovación en las áreas de: procesos
       administrativos contables, producción documental, análisis estadísticos y
       recursos humanos.
     </p>
@@ -260,8 +260,9 @@ $extLibros = ['pdf', 'docx', 'pptx'];
       </div>
     </div>
     <div class="footer-copyright grey darken-4">
-      <div class="container center">Copyright © 2025 
-<br><b>| Databook |</b> <br>Todos los derechos reservados.</div>
+      <div class="container center">Copyright © 2025
+        <br><b>| DATABOOK |</b> <br>Todos los derechos reservados.
+      </div>
     </div>
   </footer>
 

@@ -1,4 +1,9 @@
 /* Reset global */
+@font-face {
+  font-family: "Coolvetica";
+  src: url("./../assets/fonts/CoolveticaRg.otf") format("opentype");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -259,4 +264,58 @@ p {
 }
 h5 {
   font-weight: bold;
+}
+.icon {
+  text-shadow: 2px 2px 3px white !important;
+}
+
+/*Logeo*/
+
+.logeo {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  font-family: "Coolvetica", sans-serif;
+  box-shadow: 2px 2px 3px black !important;
+}
+
+.logeo h3 {
+  color: deepskyblue;
+  text-shadow: 2px 2px 3px black !important;
+}
+
+.logeo form {
+  min-height: 40vh;
+  width: max-content;
+  padding: 40px 80px;
+}
+.logeo form button {
+  background: deepskyblue;
+}
+
+.logeo form input {
+  color: aliceblue !important;
+}
+
+.formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #01589b4d;
+  backdrop-filter: blur(5px);
+  color: white;
+  text-align: center;
+  border-radius: 30px;
+  padding: 40px 80px;
+  border-left: 9px ridge #01579b;
+  border-bottom: 4px ridge #01579b;
+  font-size: 30px;
+}
+.formulario label {
+  font-size: 15px;
+}
+input + label {
+  color: grey !important;
 }

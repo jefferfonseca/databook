@@ -64,11 +64,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
   <h1 class="center-align"><?php echo $tecnico; ?></h1>
   <div class="container">
     <p class="descripcion">
-      El técnico laboral en asistente administrativo está en la capacidad de
-      gestionar información brindando solución a las necesidades
-      organizacionales con ética, eficiencia, calidad humana e innovación en
-      las áreas de procesos administrativos contables, producción documental,
-      análisis estadísticos y recursos humanos.
+      Los módulos generales son aquellos que se imparten en todos los programas técnicos, que se enfocan en el desarrollo de habilidades y conocimientos básicos para el aprendizaje general, como el desarrollo personal y social. A continuación, se presentan los módulos generales disponibles:
     </p>
   </div>
   <main class="container">
@@ -261,8 +257,9 @@ $extLibros = ['pdf', 'docx', 'pptx'];
       </div>
     </div>
     <div class="footer-copyright grey darken-4">
-      <div class="container center">Copyright © 2025 
-<br><b>| Databook |</b> <br>Todos los derechos reservados.</div>
+      <div class="container center">Copyright © 2025
+        <br><b>| DATABOOK |</b> <br>Todos los derechos reservados.
+      </div>
     </div>
   </footer>
 
