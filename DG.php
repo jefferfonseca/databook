@@ -60,7 +60,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
     <li><a href="nosotros.html">Sobre nosotros</a></li>
   </ul>
 
-  <h1 class="center-align">Técnico laboral en diseño gráfico</h1>
+  <h1 class="center-align">Técnico Laboral en <?php echo $tecnico; ?></h1>
   <div class="container">
     <p class="descripcion">
       El técnico laboral en asistente administrativo está en la capacidad de
@@ -256,11 +256,12 @@ $extLibros = ['pdf', 'docx', 'pptx'];
         </a>
         <a href="https://www.instagram.com/cenistunja_?igsh=MXV0eWowNnBleTlnZw=="><i
             class="icon fab fa-instagram"></i></a>
-        <h6>Cel: (+57) 315 363 0071</h6>
+        <h6><b>Cel:</b> (+57) 315 363 0071</h6>
       </div>
     </div>
     <div class="footer-copyright grey darken-4">
-      <div class="container">© 2025 MARITZA</div>
+      <div class="container center">Copyright © 2025 
+<br><b>| Databook |</b> <br>Todos los derechos reservados.</div>
     </div>
   </footer>
 
