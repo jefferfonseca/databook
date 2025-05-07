@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DataBook</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/logo.ico " />
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.ico" />
 
-    <!--Import Google Icon Font-->
+    <!-- Google Icon Font -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -16,31 +16,31 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-
-    <!-- Compiled and minified CSS -->
+    <!-- Materialize CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="contenido">
- 
+    <!-- Navegación -->
     <header>
       <nav class="nav-wrapper">
         <div class="nav-inner">
           <!-- Zona izquierda: logo -->
           <div class="nav-left">
             <a href="#" class="brand-logo">
-              <img src="assets/images/logo_pro.png" alt="Logo"/>
+              <img src="assets/images/logo_pro.png" alt="Logo" />
             </a>
           </div>
-  
+
           <!-- Zona central: título -->
           <div class="nav-center">
             <span class="nav-title">DATABOOK</span>
           </div>
-  
+
           <!-- Zona derecha: menú -->
           <div class="nav-right">
             <a href="#" data-target="mobile-menu" class="sidenav-trigger">
@@ -55,105 +55,114 @@
         </div>
       </nav>
     </header>
-  
-    <!-- Sidenav para móvil -->
-    <ul class="sidenav" id="mobile-menu">
-      <li><a href="index.html">Inicio</a></li>
-      <li class="active"><a href="tecnicos.html">Técnicos</a></li>
-      <li><a href="nosotros.html">Sobre nosotros</a></li>
-    </ul>
-  
+
     <main>
-      <h1 class="center titulo"><b>CARRERAS TÉCNICAS</b></h1>
+      <h1 class="center-align titulo" style="margin: 2rem 0">
+        <b>CARRERAS TÉCNICAS</b>
+      </h1>
       <div class="row">
-        <!--Asistencia Administrativa--->
+        <!-- Asistencia Administrativa -->
         <div class="col s12 m4">
           <a href="Aa.php" class="tecnicos">
-            <div class="card">
+            <div class="card hoverable">
               <div class="card-image">
-                <img src="assets/images/tecnicos/Aa.png" />
+                <img
+                  src="assets/images/tecnicos/Aa.png"
+                  alt="Asistente Administrativo"
+                />
               </div>
             </div>
           </a>
         </div>
-        <!--API--->
+        <!-- API -->
         <div class="col s12 m4">
           <a href="API.php" class="tecnicos">
-            <div class="card">
+            <div class="card hoverable">
               <div class="card-image">
-                <img src="assets/images/tecnicos/API.png" />
+                <img
+                  src="assets/images/tecnicos/API.png"
+                  alt="Asistencia para la Primera Infancia"
+                />
               </div>
             </div>
           </a>
         </div>
-        <!--CF--->
+        <!-- CF -->
         <div class="col s12 m4">
           <a href="CF.php" class="tecnicos">
-            <div class="card">
+            <div class="card hoverable">
               <div class="card-image">
-                <img src="assets/images/tecnicos/CF.png" />
-              </div>
-            </div>
-          </a>
-        </div>
-        <!--DG--->
-        <div class="col s12 m4">
-          <a href="DG.php" class="tecnicos">
-            <div class="card">
-              <div class="card-image">
-                <img src="assets/images/tecnicos/DG.png" />
-              </div>
-            </div>
-          </a>
-        </div>
-        <!--I--->
-        <div class="col s12 m4">
-          <a href="I.php" class="tecnicos">
-            <div class="card">
-              <div class="card-image">
-                <img src="assets/images/tecnicos/I.png" />
-              </div>
-            </div>
-          </a>
-        </div>
-        <!--MV--->
-        <div class="col s12 m4">
-          <a href="MV.php" class="tecnicos">
-            <div class="card">
-              <div class="card-image">
-                <img src="assets/images/tecnicos/MV.png" />
+                <img src="assets/images/tecnicos/CF.png" alt="Confección" />
               </div>
             </div>
           </a>
         </div>
       </div>
       <div class="row">
-        <!--S--->
+        <!-- DG -->
+        <div class="col s12 m4">
+          <a href="DG.php" class="tecnicos">
+            <div class="card hoverable">
+              <div class="card-image">
+                <img src="assets/images/tecnicos/DG.png" alt="Diseño Gráfico" />
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- I -->
+        <div class="col s12 m4">
+          <a href="I.php" class="tecnicos">
+            <div class="card hoverable">
+              <div class="card-image">
+                <img src="assets/images/tecnicos/I.png" alt="Informática" />
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- MV -->
+        <div class="col s12 m4">
+          <a href="MV.php" class="tecnicos">
+            <div class="card hoverable">
+              <div class="card-image">
+                <img
+                  src="assets/images/tecnicos/MV.png"
+                  alt="Mantenimiento Vehicular"
+                />
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <!-- S -->
         <div class="col s12 m4">
           <a href="S.php" class="tecnicos">
-            <div class="card">
+            <div class="card hoverable">
               <div class="card-image">
-                <img src="assets/images/tecnicos/S.png" />
+                <img src="assets/images/tecnicos/S.png" alt="Soldadura" />
               </div>
             </div>
           </a>
         </div>
-        <!--V--->
+        <!-- V -->
         <div class="col s12 m4">
           <a href="V.php" class="tecnicos">
-            <div class="card">
+            <div class="card hoverable">
               <div class="card-image">
-                <img src="assets/images/tecnicos/V.png" />
+                <img src="assets/images/tecnicos/V.png" alt="Veterinaria" />
               </div>
             </div>
           </a>
         </div>
-        <!--MG--->
+        <!-- MG -->
         <div class="col s12 m4">
           <a href="MG.php" class="tecnicos">
-            <div class="card">
+            <div class="card hoverable">
               <div class="card-image">
-                <img src="assets/images/tecnicos/MG.png" />
+                <img
+                  src="assets/images/tecnicos/MG.png"
+                  alt="Mecánica General"
+                />
               </div>
             </div>
           </a>
@@ -210,29 +219,9 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
     <script>
-      const carousel = document.querySelector(".carousel.carousel-slider");
-      M.Carousel.init(carousel, {
-        fullWidth: true,
-        indicators: true,
-      });
-
-      setInterval(() => {
-        const instance = M.Carousel.getInstance(carousel);
-        instance.next();
-      }, 3000);
-    </script>
-  </body>
-</html>
-
-
-    <!-- Importa jQuery y Materialize JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $(".sidenav").sidenav();
+      document.addEventListener("DOMContentLoaded", function () {
+        M.Sidenav.init(document.querySelectorAll(".sidenav"));
       });
     </script>
   </body>

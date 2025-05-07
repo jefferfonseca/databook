@@ -16,11 +16,11 @@ $extLibros = ['pdf', 'docx', 'pptx'];
   <link rel="icon" type="image/x-icon" href="assets/images/logo.ico" />
 
   <!-- Materialize CSS y tu CSS -->
-  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body class="contenido">
@@ -61,14 +61,15 @@ $extLibros = ['pdf', 'docx', 'pptx'];
       <li><a href="nosotros.html">Sobre nosotros</a></li>
     </ul> 
     <h1 class="center-align">Técnico laboral en mercadeo y ventas</h1>
-      <p class="descripcion">
+      <div class="container">
+    <p class="descripcion">
         El técnico laboral en asistente administrativo está en la capacidad de
         gestionar información brindando solución a las necesidades
         organizacionales con ética, eficiencia, calidad humana e innovación en
         las áreas de procesos administrativos contables, producción documental,
         análisis estadísticos y recursos humanos.
-      </p>
-
+        </p>
+  </div>
   <main class="container">
     <!-- Inicio del collapsible dinámico -->
     <ul class="collapsible popout">
@@ -110,9 +111,9 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                             <a href="<?= $url ?>" target="_blank" rel="noopener noreferrer">
                               <div class="cards tecnicos">
                                 <img src="assets/images/libros.jpg" alt="PDF" style="width:100%" />
-                                <div class="opciones">
-                                  <button>Abrir</button>
-                                  <button>Descargar</button>
+                                <div class="opciones" style="margin-top: 0.5em;">
+                                  <a href="<?= $url ?>" target="_blank" class="btn blue">Abrir</a>
+                                  <a href="<?= $url ?>" download class="btn green">Descargar</a>
                                 </div>
                                 <div class="cards-body">
                                   <h4 class="titlulo-recursos"><?= htmlspecialchars($name) ?></h4>
@@ -152,9 +153,9 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                             <a href="<?= $safeUrl ?>" target="_blank" rel="noopener noreferrer">
                               <div class="cards tecnicos">
                                 <img src="assets/images/videos.jpg" alt="Video" style="width:100%" />
-                                <div class="opciones">
-                                  <button>Abrir</button>
-                                </div>
+                               <div class="opciones" style="margin-top: 0.5em;">
+                                  <a href="<?= $url ?>" target="_blank" class="btn blue">Abrir</a>
+                 </div>
                                 <div class="cards-body">
                                   <h4 class="titlulo-recursos"><?= htmlspecialchars($filename) ?></h4>
                                 </div>
