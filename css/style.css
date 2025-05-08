@@ -319,3 +319,7 @@ h5 {
 input + label {
   color: grey !important;
 }
+
+.logeo .formulario .ing h3{
+  margin: 0 !important;
+}

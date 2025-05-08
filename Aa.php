@@ -145,20 +145,27 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                     <div class="row">
                       <?php foreach ($videos as $url):
                         $safeUrl = htmlspecialchars($url, ENT_QUOTES);
-                        $filename = basename(parse_url($url, PHP_URL_PATH));
+                        $filename = $url;
+
+                        $partes = explode('|', $filename, 2); // El "2" limita la división a solo 2 partes
+
+                        // Obtener el título y la URL
+                        $titulo = $partes[0]; // "Cuidado de la Voz en el Ámbito Laboral"
+                        $url = $partes[1]; // "https://youtu.be/fe2zzOt6gWk?si=-3KQ7ALKRtQAKfYJ"
                       ?>
                         <div class="col s12 m3 l4">
                           <span class="cards-container">
                             <div class="cards tecnicos">
                               <img src="assets/images/videos.jpg" alt="Video" style="width:100%" />
-                              <div class="opciones">
-                                <a href="<?= $url ?>" target="_blank">Abrir</a>
-                              </div>
                               <div class="cards-body">
-                                <h4 class="titlulo-recursos"><?= htmlspecialchars($filename) ?></h4>
+                                <h4 class="titlulo-recursos"><?= $titulo ?></h4>
+                                <div class="opciones" style="margin-top: 10px;">
+                                  <a href="<?= $url ?>" target="_blank" rel="noopener noreferrer">
+                                    Abrir
+                                  </a>
+                                </div>
                               </div>
                             </div>
-                            </a>
                           </span>
                         </div>
                       <?php endforeach; ?>
@@ -201,12 +208,12 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                                 <h4 class="titlulo-recursos"><?= htmlspecialchars($titulo) ?></h4>
                                 <?php if ($isLocal): ?>
                                   <audio controls style="width: 100%; margin-top: 10px;">
-                                    <source src="<?= $safeUrl ?>" type="audio/mpeg">
+                                    <source src="<?= $enlace ?>" type="audio/mpeg">
                                     Tu navegador no soporta la reproducción de audio.
                                   </audio>
                                 <?php else: ?>
                                   <div class="opciones" style="margin-top: 10px;">
-                                    <a href="<?= $safeUrl ?>" target="_blank"
+                                    <a href="<?= $enlace ?>" target="_blank"
                                       rel="noopener noreferrer">Abrir</a>
                                   </div>
                                 <?php endif; ?>
@@ -219,8 +226,6 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                   <?php endif; ?>
                 </div>
               </li>
-
-
             </ul>
           </div>
         </li>

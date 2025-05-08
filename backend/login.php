@@ -30,7 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $user['Id'];
             $_SESSION['tipo_usuario_id'] = $user['tipo_usuario_id'];
 
-            header('Location: ./../index.html');
+            // header('Location: ./../index.html');
+            header('Location: ./../registro.php');
             exit();
         }
 
@@ -40,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 window.location.href = './../home.php';
               </script>";
         exit();
-
     } catch (PDOException $e) {
         // Error grave de base de datos
         error_log("Login error: " . $e->getMessage());

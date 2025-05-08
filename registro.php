@@ -24,47 +24,56 @@ $stmt = $conn->prepare(
 $stmt->execute();
 $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro y Gestión de Usuarios</title>
+    <title>Iniciar Sesión</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        @font-face {
-            font-family: 'Coolvetica';
-            src: url('fonts/CoolveticaRg.otf') format('opentype');
-        }
-
-        body {
-            font-family: 'Coolvetica', sans-serif;
-        }
-
-        .container {
-            margin-top: 40px;
-            max-width: 900px;
-        }
-
-        table.striped tr:hover {
-            background-color: #f1f1f1;
-        }
-
-        .action-btns .btn-small {
-            margin-right: 4px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="grey lighten-4">
+<body class="contenido">
+    <header>
+        <nav class="nav-wrapper">
+            <div class="nav-inner">
+                <!-- Zona izquierda: logo -->
+                <div class="nav-left">
+                    <a href="#" class="brand-logo">
+                        <img src="assets/images/logo_pro.png" alt="Logo" />
+                    </a>
+                </div>
+
+                <!-- Zona central: título -->
+                <div class="nav-center">
+                    <span class="nav-title">DATABOOK</span>
+                </div>
+
+                <!-- Zona derecha: menú -->
+                <div class="nav-right">
+                    <a href="#" data-target="mobile-menu" class="sidenav-trigger">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down nav-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li class="active"><a href="tecnicos.html">Técnicos</a></li>
+                        <li><a href="nosotros.html">Sobre nosotros</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <?php if ($flash): ?>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                M.toast({ html: <?= json_encode($flash) ?>, classes: 'green darken-2 white-text' });
+                M.toast({
+                    html: <?= json_encode($flash) ?>,
+                    classes: 'green darken-2 white-text'
+                });
             });
         </script>
     <?php endif; ?>
@@ -77,7 +86,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </form>
 
     <div class="container">
-        <h4 class="center-align">Registro y Gestión de Usuarios</h4>
+        <h4 class="center-align white-text">Registro y Gestión de Usuarios</h4>
 
         <!-- Formulario AJAX (registro/edición) -->
         <div class="card">
@@ -125,9 +134,9 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
         <!-- Tabla de Usuarios Registrados -->
-        <h5>Usuarios Registrados</h5>
+        <h5 class="white-text">Usuarios Registrados</h5>
         <table class="striped responsive-table">
-            <thead>
+            <thead class="white">
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
@@ -176,28 +185,37 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             M.FormSelect.init(document.querySelectorAll('select'));
             const form = document.getElementById('registroForm');
             const submitBtn = document.getElementById('submitBtn');
 
-            form.addEventListener('submit', async function (e) {
+            form.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 const data = new FormData(form);
-                const res = await fetch('backend/user_action.php', { method: 'POST', body: data });
+                const res = await fetch('backend/user_action.php', {
+                    method: 'POST',
+                    body: data
+                });
                 const json = await res.json();
                 if (json.success) {
-                    M.toast({ html: json.message, classes: 'green darken-2 white-text' });
+                    M.toast({
+                        html: json.message,
+                        classes: 'green darken-2 white-text'
+                    });
                     form.reset();
                     submitBtn.textContent = 'Guardar Usuario';
                     M.FormSelect.init(document.querySelectorAll('select'));
                     setTimeout(() => location.reload(), 1000);
                 } else {
-                    M.toast({ html: json.message, classes: 'red darken-2 white-text' });
+                    M.toast({
+                        html: json.message,
+                        classes: 'red darken-2 white-text'
+                    });
                 }
             });
 
-            document.querySelectorAll('.editBtn').forEach(btn => btn.addEventListener('click', function () {
+            document.querySelectorAll('.editBtn').forEach(btn => btn.addEventListener('click', function() {
                 const row = this.closest('tr');
                 document.getElementById('user_id').value = row.dataset.id;
                 document.getElementById('nombre').value = row.querySelector('.td-nombre').textContent;
