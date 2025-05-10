@@ -64,7 +64,7 @@
 
     <h1 class="center titulo">¡Bienvenidos Comunidad Cenista!</h1>
     <main class="contenido">
-      <div class="row valign-wrapper">
+      <div class="row valign-wrapper no-valign-mobile">
         <div class="col s12 m6">
           <div class="valign fondo">
             <p>
@@ -118,7 +118,7 @@
 
     <!--pie de pagina-->
     <footer class="page-footer grey darken-3">
-      <div class="row valign-wrapper">
+      <div class="row valign-wrapper no-valign-mobile">
         <div class="col s12 m5">
           <h5 class="white-text">Sede Centro</h5>
 
@@ -159,7 +159,10 @@
         </div>
       </div>
       <div class="footer-copyright grey darken-4">
-        <div class="container center">Copyright © 2025 <br><b>| DATABOOK |</b> <br>Todos los derechos reservados.</div>
+        <div class="container center">
+          Copyright © 2025 <br /><b>| DATABOOK |</b> <br />Todos los derechos
+          reservados.
+        </div>
       </div>
     </footer>
 
@@ -178,6 +181,29 @@
         const instance = M.Carousel.getInstance(carousel);
         instance.next();
       }, 3000);
+    </script>
+
+    <!-- Ajustar valign-wrapper-->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        function ajustarValignWrapper() {
+          const row = document.querySelector(".valign-wrapper");
+          if (window.innerWidth <= 600) {
+            row.classList.remove("valign-wrapper");
+          } else {
+            // Asegúrate de volverla a agregar en pantallas grandes
+            if (!row.classList.contains("valign-wrapper")) {
+              row.classList.add("valign-wrapper");
+            }
+          }
+        }
+
+        // Ejecuta al cargar la página
+        ajustarValignWrapper();
+
+        // Y también cada vez que cambie el tamaño de la pantalla
+        window.addEventListener("resize", ajustarValignWrapper);
+      });
     </script>
   </body>
 </html>

@@ -64,7 +64,9 @@ $extLibros = ['pdf', 'docx', 'pptx'];
   <h1 class="center-align"><?php echo $tecnico; ?></h1>
   <div class="container">
     <p class="descripcion">
-      Los módulos generales son aquellos que se imparten en todos los programas técnicos, que se enfocan en el desarrollo de habilidades y conocimientos básicos para el aprendizaje general, como el desarrollo personal y social. A continuación, se presentan los módulos generales disponibles:
+      Los módulos generales son aquellos que se imparten en todos los programas técnicos, que se enfocan en el
+      desarrollo de habilidades y conocimientos básicos para el aprendizaje general, como el desarrollo personal y
+      social. A continuación, se presentan los módulos generales disponibles:
     </p>
   </div>
   <main class="container">
@@ -77,7 +79,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 
       foreach ($modulos as $modPath):
         $modName = basename($modPath);
-      ?>
+        ?>
         <li>
           <div class="collapsible-header">
             <i class="material-icons">folder</i>
@@ -102,12 +104,12 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                       <?php foreach ($libros as $file):
                         $name = basename($file);
                         $url = $file;
-                      ?>
+                        ?>
                         <div class="col s12 m3 l4">
                           <span class="cards-container">
                             <div class="cards tecnicos">
                               <img src="assets/images/libros.jpg" alt="PDF" style="width:100%" />
-                              <div class="opciones" style="margin-top: 0.5em;">
+                              <div class="opciones">
                                 <a href="<?= $url ?>" target="_blank">Abrir</a>
                                 <a href="<?= $url ?>" download>Descargar</a>
                               </div>
@@ -142,20 +144,27 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                     <div class="row">
                       <?php foreach ($videos as $url):
                         $safeUrl = htmlspecialchars($url, ENT_QUOTES);
-                        $filename = basename(parse_url($url, PHP_URL_PATH));
-                      ?>
+                        $filename = $url;
+
+                        $partes = explode('|', $filename, 2); // El "2" limita la división a solo 2 partes
+                  
+                        // Obtener el título y la URL
+                        $titulo = $partes[0]; // "Cuidado de la Voz en el Ámbito Laboral"
+                        $url = $partes[1]; // "https://youtu.be/fe2zzOt6gWk?si=-3KQ7ALKRtQAKfYJ"
+                        ?>
                         <div class="col s12 m3 l4">
                           <span class="cards-container">
                             <div class="cards tecnicos">
                               <img src="assets/images/videos.jpg" alt="Video" style="width:100%" />
-                              <div class="opciones" style="margin-top: 0.5em;">
-                                <a href="<?= $url ?>" target="_blank">Abrir</a>
-                              </div>
                               <div class="cards-body">
-                                <h4 class="titlulo-recursos"><?= htmlspecialchars($filename) ?></h4>
+                                <h4 class="titlulo-recursos"><?= $titulo ?></h4>
+                                <div class="opciones" style="margin-top: 10px;">
+                                  <a href="<?= $url ?>" target="_blank" rel="noopener noreferrer">
+                                    Abrir
+                                  </a>
+                                </div>
                               </div>
                             </div>
-                            </a>
                           </span>
                         </div>
                       <?php endforeach; ?>
@@ -189,7 +198,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 
                         $safeUrl = htmlspecialchars($enlace, ENT_QUOTES);
                         $isLocal = !preg_match('/^https?:\/\//', $enlace);
-                      ?>
+                        ?>
                         <div class="col s12 m3 l4">
                           <span class="cards-container">
                             <div class="cards tecnicos">
@@ -198,13 +207,12 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                                 <h4 class="titlulo-recursos"><?= htmlspecialchars($titulo) ?></h4>
                                 <?php if ($isLocal): ?>
                                   <audio controls style="width: 100%; margin-top: 10px;">
-                                    <source src="<?= $safeUrl ?>" type="audio/mpeg">
+                                    <source src="<?= $enlace ?>" type="audio/mpeg">
                                     Tu navegador no soporta la reproducción de audio.
                                   </audio>
                                 <?php else: ?>
                                   <div class="opciones" style="margin-top: 10px;">
-                                    <a href="<?= $safeUrl ?>" target="_blank"
-                                      rel="noopener noreferrer">Abrir</a>
+                                    <a href="<?= $enlace ?>" target="_blank" rel="noopener noreferrer">Abrir</a>
                                   </div>
                                 <?php endif; ?>
                               </div>
@@ -216,8 +224,6 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                   <?php endif; ?>
                 </div>
               </li>
-
-
             </ul>
           </div>
         </li>
@@ -229,7 +235,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 
   <!--pie de pagina-->
   <footer class="page-footer grey darken-3">
-    <div class="row valign-wrapper">
+    <div class="row valign-wrapper no-valign-mobile">
       <div class="col s12 m5">
         <h5 class="white-text">Sede Centro</h5>
 
@@ -288,7 +294,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.collapsible');
     M.Collapsible.init(elems);
   });

@@ -80,7 +80,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 
       foreach ($modulos as $modPath):
         $modName = basename($modPath);
-      ?>
+        ?>
         <li>
           <div class="collapsible-header">
             <i class="material-icons">folder</i>
@@ -105,7 +105,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                       <?php foreach ($libros as $file):
                         $name = basename($file);
                         $url = $file;
-                      ?>
+                        ?>
                         <div class="col s12 m3 l4">
                           <span class="cards-container">
                             <div class="cards tecnicos">
@@ -148,11 +148,11 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                         $filename = $url;
 
                         $partes = explode('|', $filename, 2); // El "2" limita la división a solo 2 partes
-
+                  
                         // Obtener el título y la URL
                         $titulo = $partes[0]; // "Cuidado de la Voz en el Ámbito Laboral"
                         $url = $partes[1]; // "https://youtu.be/fe2zzOt6gWk?si=-3KQ7ALKRtQAKfYJ"
-                      ?>
+                        ?>
                         <div class="col s12 m3 l4">
                           <span class="cards-container">
                             <div class="cards tecnicos">
@@ -199,7 +199,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 
                         $safeUrl = htmlspecialchars($enlace, ENT_QUOTES);
                         $isLocal = !preg_match('/^https?:\/\//', $enlace);
-                      ?>
+                        ?>
                         <div class="col s12 m3 l4">
                           <span class="cards-container">
                             <div class="cards tecnicos">
@@ -213,8 +213,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                                   </audio>
                                 <?php else: ?>
                                   <div class="opciones" style="margin-top: 10px;">
-                                    <a href="<?= $enlace ?>" target="_blank"
-                                      rel="noopener noreferrer">Abrir</a>
+                                    <a href="<?= $enlace ?>" target="_blank" rel="noopener noreferrer">Abrir</a>
                                   </div>
                                 <?php endif; ?>
                               </div>
@@ -237,7 +236,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 
   <!--pie de pagina-->
   <footer class="page-footer grey darken-3">
-    <div class="row valign-wrapper">
+    <div class="row valign-wrapper no-valign-mobile">
       <div class="col s12 m5">
         <h5 class="white-text">Sede Centro</h5>
 
@@ -296,7 +295,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.collapsible');
     M.Collapsible.init(elems);
   });

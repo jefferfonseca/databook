@@ -62,7 +62,11 @@ $extLibros = ['pdf', 'docx', 'pptx'];
   <h1 class="center-align">Técnico Laboral en <?php echo $tecnico; ?></h1>
   <div class="container">
     <p class="descripcion">
-      El técnico laboral en mercadeo y ventas atenderá las necesidades y requerimientos empresariales relacionados con la comercialización y mercadeo de productos y/o servicios para la pequeña y mediana empresa. Conocerá y aplicará las técnicas y procesos operativos propios de esta área realizando labores de demostración de bienes y servicios en establecimientos comerciales, Generalmente de consumo masivo; reuniendo información en forma directa o utilizando medios de comunicación
+      El técnico laboral en mercadeo y ventas atenderá las necesidades y requerimientos empresariales relacionados con
+      la comercialización y mercadeo de productos y/o servicios para la pequeña y mediana empresa. Conocerá y aplicará
+      las técnicas y procesos operativos propios de esta área realizando labores de demostración de bienes y servicios
+      en establecimientos comerciales, Generalmente de consumo masivo; reuniendo información en forma directa o
+      utilizando medios de comunicación
     </p>
   </div>
   <main class="container">
@@ -75,7 +79,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 
       foreach ($modulos as $modPath):
         $modName = basename($modPath);
-      ?>
+        ?>
         <li>
           <div class="collapsible-header">
             <i class="material-icons">folder</i>
@@ -100,12 +104,12 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                       <?php foreach ($libros as $file):
                         $name = basename($file);
                         $url = $file;
-                      ?>
+                        ?>
                         <div class="col s12 m3 l4">
                           <span class="cards-container">
                             <div class="cards tecnicos">
                               <img src="assets/images/libros.jpg" alt="PDF" style="width:100%" />
-                              <div class="opciones" style="margin-top: 0.5em;">
+                              <div class="opciones">
                                 <a href="<?= $url ?>" target="_blank">Abrir</a>
                                 <a href="<?= $url ?>" download>Descargar</a>
                               </div>
@@ -140,20 +144,27 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                     <div class="row">
                       <?php foreach ($videos as $url):
                         $safeUrl = htmlspecialchars($url, ENT_QUOTES);
-                        $filename = basename(parse_url($url, PHP_URL_PATH));
-                      ?>
+                        $filename = $url;
+
+                        $partes = explode('|', $filename, 2); // El "2" limita la división a solo 2 partes
+                  
+                        // Obtener el título y la URL
+                        $titulo = $partes[0]; // "Cuidado de la Voz en el Ámbito Laboral"
+                        $url = $partes[1]; // "https://youtu.be/fe2zzOt6gWk?si=-3KQ7ALKRtQAKfYJ"
+                        ?>
                         <div class="col s12 m3 l4">
                           <span class="cards-container">
                             <div class="cards tecnicos">
                               <img src="assets/images/videos.jpg" alt="Video" style="width:100%" />
-                              <div class="opciones" style="margin-top: 0.5em;">
-                                <a href="<?= $url ?>" target="_blank">Abrir</a>
-                              </div>
                               <div class="cards-body">
-                                <h4 class="titlulo-recursos"><?= htmlspecialchars($filename) ?></h4>
+                                <h4 class="titlulo-recursos"><?= $titulo ?></h4>
+                                <div class="opciones" style="margin-top: 10px;">
+                                  <a href="<?= $url ?>" target="_blank" rel="noopener noreferrer">
+                                    Abrir
+                                  </a>
+                                </div>
                               </div>
                             </div>
-                            </a>
                           </span>
                         </div>
                       <?php endforeach; ?>
@@ -182,11 +193,12 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                         $partes = explode('|', $linea, 2);
                         $titulo = isset($partes[0]) ? trim($partes[0]) : 'Sin nombre';
                         $enlace = isset($partes[1]) ? trim($partes[1]) : '';
-                        if (!$enlace) continue;
+                        if (!$enlace)
+                          continue;
 
                         $safeUrl = htmlspecialchars($enlace, ENT_QUOTES);
                         $isLocal = !preg_match('/^https?:\/\//', $enlace);
-                      ?>
+                        ?>
                         <div class="col s12 m3 l4">
                           <span class="cards-container">
                             <div class="cards tecnicos">
@@ -195,12 +207,12 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                                 <h4 class="titlulo-recursos"><?= htmlspecialchars($titulo) ?></h4>
                                 <?php if ($isLocal): ?>
                                   <audio controls style="width: 100%; margin-top: 10px;">
-                                    <source src="<?= $safeUrl ?>" type="audio/mpeg">
+                                    <source src="<?= $enlace ?>" type="audio/mpeg">
                                     Tu navegador no soporta la reproducción de audio.
                                   </audio>
                                 <?php else: ?>
                                   <div class="opciones" style="margin-top: 10px;">
-                                    <a href="<?= $safeUrl ?>" target="_blank" rel="noopener noreferrer">Abrir</a>
+                                    <a href="<?= $enlace ?>" target="_blank" rel="noopener noreferrer">Abrir</a>
                                   </div>
                                 <?php endif; ?>
                               </div>
@@ -212,8 +224,6 @@ $extLibros = ['pdf', 'docx', 'pptx'];
                   <?php endif; ?>
                 </div>
               </li>
-
-
             </ul>
           </div>
         </li>
@@ -225,17 +235,13 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 
   <!--pie de pagina-->
   <footer class="page-footer grey darken-3">
-    <div class="row valign-wrapper">
+    <div class="row valign-wrapper no-valign-mobile">
       <div class="col s12 m5">
         <h5 class="white-text">Sede Centro</h5>
 
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.2495717377706!2d-73.36888772271514!3d5.529946980140521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a7dd370d9df2f%3A0x8f347d9ae4bfe052!2sInstituto%20Cenis%20Tunja!5e0!3m2!1ses!2sco!4v1746559382054!5m2!1ses!2sco"
-          width="100%"
-          height="300"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
+          width="100%" height="300" style="border: 0" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 
@@ -244,19 +250,15 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3971.2751122815375!2d-73.36562661627082!3d5.526139612127951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zMTI1OSBDbC4gMTMswqBUdW5qYSwgQm95YWPDoQ!5e0!3m2!1ses!2sco!4v1746560054815!5m2!1ses!2sco"
-          width="100%"
-          height="300"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
+          width="100%" height="300" style="border: 0" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="col s12 m3 center">
         <h5 class="white-text">Contáctanos:</h5>
         <a href="https://www.facebook.com/share/1HC8LmKRYK/"><i class="icon fab fa-facebook-f"></i>
         </a>
-        <a
-          href="https://www.instagram.com/cenistunja_?igsh=MXV0eWowNnBleTlnZw=="><i class="icon fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/cenistunja_?igsh=MXV0eWowNnBleTlnZw=="><i
+            class="icon fab fa-instagram"></i></a>
         <h6><b>Cel:</b> (+57) 315 363 0071</h6>
       </div>
     </div>
@@ -292,7 +294,7 @@ $extLibros = ['pdf', 'docx', 'pptx'];
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.collapsible');
     M.Collapsible.init(elems);
   });

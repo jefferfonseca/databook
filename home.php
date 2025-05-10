@@ -16,10 +16,10 @@ session_start();
 <body class="contenido">
     <div class="logeo">
         <div class="formulario">
-           <div class="ing">
-           <img src="assets/images/logo_pro.png" alt="Logo" width="200px" />
-           <h3 class="center">Ingreso</h3>
-           </div>
+            <div class="ing">
+                <img src="assets/images/logo_pro.png" alt="Logo" width="200px" />
+                <h3 class="center">Ingreso</h3>
+            </div>
             <form action="backend/login.php" method="POST">
                 <div class="input-field">
                     <input type="email" name="email" id="email" required>
@@ -36,7 +36,7 @@ session_start();
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const error = sessionStorage.getItem('loginError');
             if (error) {
                 M.toast({

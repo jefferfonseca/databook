@@ -323,3 +323,10 @@ input + label {
 .logeo .formulario .ing h3{
   margin: 0 !important;
 }
+
+@media (max-width: 600px) {
+  .no-valign-mobile {
+    align-items: unset !important;
+    display: block !important;
+  }
+}

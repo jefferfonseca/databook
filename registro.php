@@ -159,7 +159,8 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <td class="td-correo"><?= htmlspecialchars($u['Correo']) ?></td>
                             <td class="td-telefono"><?= htmlspecialchars($u['Telefono']) ?></td>
                             <td class="td-tipo" data-tipo="<?= htmlspecialchars($u['Tipo']) ?>">
-                                <?= htmlspecialchars($u['Tipo']) ?></td>
+                                <?= htmlspecialchars($u['Tipo']) ?>
+                            </td>
                             <td class="action-btns">
                                 <!-- Editar -->
                                 <button class="btn-small blue editBtn" title="Editar">
@@ -185,12 +186,12 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             M.FormSelect.init(document.querySelectorAll('select'));
             const form = document.getElementById('registroForm');
             const submitBtn = document.getElementById('submitBtn');
 
-            form.addEventListener('submit', async function(e) {
+            form.addEventListener('submit', async function (e) {
                 e.preventDefault();
                 const data = new FormData(form);
                 const res = await fetch('backend/user_action.php', {
@@ -215,7 +216,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 }
             });
 
-            document.querySelectorAll('.editBtn').forEach(btn => btn.addEventListener('click', function() {
+            document.querySelectorAll('.editBtn').forEach(btn => btn.addEventListener('click', function () {
                 const row = this.closest('tr');
                 document.getElementById('user_id').value = row.dataset.id;
                 document.getElementById('nombre').value = row.querySelector('.td-nombre').textContent;

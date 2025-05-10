@@ -1,0 +1,4 @@
+Bienvenida al curso|assets/audio/bienvenida.mp3
+Audio motivacional|assets/audio/motivacion.mp3
+Podcast de liderazgo|https://open.spotify.com/episode/1AbCdEfGhIjKlMnOpQrStUv
+Norma ISO|https://youtu.be/fe2zzOt6gWk?si=-3KQ7ALKRtQAKfYJ
