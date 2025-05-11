@@ -169,40 +169,21 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
     <script>
-      const carousel = document.querySelector(".carousel.carousel-slider");
-      M.Carousel.init(carousel, {
-        fullWidth: true,
-        indicators: true,
-      });
+      $(document).ready(function () {
+        // Inicializar Carrusel
+        $(".carousel.carousel-slider").carousel({
+          fullWidth: true,
+          indicators: true,
+        });
 
-      setInterval(() => {
-        const instance = M.Carousel.getInstance(carousel);
-        instance.next();
-      }, 3000);
-    </script>
+        // Avanzar cada 3 segundos
+        setInterval(function () {
+          $(".carousel.carousel-slider").carousel("next");
+        }, 3000);
 
-    <!-- Ajustar valign-wrapper-->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        function ajustarValignWrapper() {
-          const row = document.querySelector(".valign-wrapper");
-          if (window.innerWidth <= 600) {
-            row.classList.remove("valign-wrapper");
-          } else {
-            // Asegúrate de volverla a agregar en pantallas grandes
-            if (!row.classList.contains("valign-wrapper")) {
-              row.classList.add("valign-wrapper");
-            }
-          }
-        }
-
-        // Ejecuta al cargar la página
-        ajustarValignWrapper();
-
-        // Y también cada vez que cambie el tamaño de la pantalla
-        window.addEventListener("resize", ajustarValignWrapper);
+        // Inicializar Sidenav
+        $(".sidenav").sidenav();
       });
     </script>
   </body>

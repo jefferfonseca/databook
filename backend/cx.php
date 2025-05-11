@@ -1,9 +1,16 @@
 <?php
-// conexion.php
+// localhost
 $host = 'localhost';
 $dbname = 'databook';
 $username = 'root';
 $password = '';
+
+// remote
+// $host = 'localhost';
+// $dbname = 'ingjefer_databook';
+// $username = 'ingjefer_mari';
+// $password = 'P.5dxU:S7|{;';
+
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);

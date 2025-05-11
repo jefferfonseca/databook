@@ -11,9 +11,14 @@
   --azul: #01579b;
 }
 
+.registro{
+  background-color: var(--azul) !important;
+  height: 80px !important;
+}
+
 /* Navbar wrapper */
 .nav-wrapper {
-  background-color: #01579b;
+  background-color: var(--azul);
   height: 100px;
   display: flex;
   align-items: center;

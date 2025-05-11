@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 $flash = $_SESSION['flash'] ?? null;
 unset($_SESSION['flash']);
 
-// 2. Conexión a la base de datos (ruta corregida)
+// 2. Conexión a la base de datos 
 require_once __DIR__ . '/backend/cx.php';
 
 // 3. Obtener todos los usuarios

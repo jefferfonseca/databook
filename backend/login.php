@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             // Éxito: guardamos ID y tipo de usuario en la sesión
             $_SESSION['user_id'] = $user['Id'];
-            $_SESSION['tipo_usuario_id'] = $user['tipo_usuario_id'];
+            $_SESSION['rol'] = $user['tipo_usuario_id'];
 
             // header('Location: ./../index.html');
             header('Location: ./../registro.php');
