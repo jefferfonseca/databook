@@ -12,5 +12,5 @@ if (ini_get("session.use_cookies")) {
 }
 
 // Redirigir al login o página pública
-header('Location: login.php');
+header('Location: ../home.php');
 exit();

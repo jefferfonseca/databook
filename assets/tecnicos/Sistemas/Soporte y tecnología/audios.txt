@@ -1,0 +1,4 @@
+Bienvenida al curso|assets/audio/bienvenida.mp3
+Audio motivacional|assets/audio/motivacion.mp3
+Podcast de liderazgo|https://open.spotify.com/episode/1AbCdEfGhIjKlMnOpQrStUv
+¿Cómo iniciar en la seguridad informática de la información o ciberseguridad?|https://open.spotify.com/episode/0Be2y9kobTmAB2wC5I7do7?si=12QBVXf1Q-yYJalSFjEN8w 

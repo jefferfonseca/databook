@@ -1,0 +1,4 @@
+Bienvenida al curso|assets/audio/bienvenida.mp3
+Audio motivacional|assets/audio/motivacion.mp3
+Podcast de liderazgo|https://open.spotify.com/episode/1AbCdEfGhIjKlMnOpQrStUv
+Expresión oral y escrita para universitarios|https://open.spotify.com/episode/3icuZ6ECTvhM3hmY6lca7y?si=5sqwBsCWT2OBSMhj-DT6oA

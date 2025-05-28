@@ -11,132 +11,85 @@
   --azul: #01579b;
 }
 
-.registro{
-  background-color: var(--azul) !important;
-  height: 80px !important;
+.nav-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 !important;
 }
 
-/* Navbar wrapper */
+nav .nav-wrapper {
+  height: 80px !important;
+  width: 100%;
+}
+
+nav ul a {
+  padding: 10px 10px;
+}
+
 .nav-wrapper {
   background-color: var(--azul);
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 0 40px;
 }
 
-/* Contenedor interior con 3 zonas */
-.nav-inner {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-}
-
-.nav-left,
-.nav-center,
-.nav-right {
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-
-/* Logo a la izquierda */
-.nav-left {
-  justify-content: flex-start;
-  padding-left: 20px;
-}
-.brand-logo img {
-  width: 80px;
-  vertical-align: middle;
-}
-
-/* Título centrado */
-.nav-center {
-  justify-content: center;
-}
 .nav-title {
+  padding: 10px 10px !important;
+
   color: whitesmoke;
   font-size: 30px;
   font-weight: bold;
   text-shadow: 2px 2px 3px black;
 }
 
-/* Menú a la derecha */
-.nav-right {
-  justify-content: flex-end;
-  padding-right: 20px;
-}
-.nav-links li {
-  display: flex;
-  align-items: center;
-  height: 100px;
-  justify-content: center;
-}
-.nav-links li a {
-  color: white;
-  font-size: 18px;
-  padding: 0 15px;
-}
-.nav-links li:hover {
-  background-color: rgba(113, 113, 113, 0.608) !important;
-  height: 100px;
-}
-.sidenav-trigger {
-  display: none;
-}
-
-/* Responsive móvil */
-@media screen and (max-width: 992px) {
-  /* Contenedor general */
-  .nav-wrapper {
-    height: auto;
-    padding: 40px 0 0 0;
+@media (max-width: 992px) {
+  /* Forzamos nav a crecer y nav-wrapper a columna */
+  nav {
+    height: auto !important;
+    min-height: auto !important;
   }
 
-  .nav-inner {
-    display: block; /* ya no flex row en móvil */
-    text-align: center;
+  nav .nav-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 0 !important;
   }
 
-  /* Logo centrado en fila propia */
-  .brand-logo {
-    display: block;
-    margin: 40px auto 15px auto; /* centrado + espacio abajo */
+  /* 1) Logo en fila 1, centrado */
+  nav .nav-wrapper .brand-logo {
+    order: 1 !important;
+    margin: 0.5rem 0 !important;
   }
 
-  /* Fila 2: contenedor flex para título + trigger */
-  .mobile-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 400px;
-    margin: 0 auto 10px auto;
+  /* Quitamos cualquier margin-top inline */
+  nav .nav-wrapper .brand-logo img {
+    margin-top: 0 !important;
   }
 
-  /* Ajustes internos */
-  .mobile-header .nav-title {
-    font-size: 22px;
-  }
-  nav .nav-title {
-    padding: 55px 0 0 0;
-  }
-
-  .nav-right {
-    padding-right: 0;
-  }
-  .sidenav-trigger {
-    display: block;
-  }
-  .sidenav-trigger i {
-    font-size: 32px;
-    color: white;
+  /* 2) Título en fila 2, siempre estático */
+  nav .nav-wrapper .nav-title {
+    order: 2 !important;
+    position: static !important;
+    transform: none !important;
+    margin: 3.5rem 0 0 !important;
   }
 
-  /* Ocultar menú desktop */
-  .nav-links {
+  /* 3) Hamburguesa en fila 3, anclada a la izquierda */
+  nav .nav-wrapper .sidenav-trigger {
+    order: 3 !important;
+    align-self: flex-start !important;
+    margin: 0.5rem 1rem !important;
+  }
+
+  /* Ocultamos el menú de escritorio */
+  nav .nav-wrapper .right.hide-on-med-and-down {
     display: none !important;
   }
+}
+
+.registro {
+  background-color: var(--azul) !important;
+  height: 80px !important;
 }
 
 /* Estilos adicionales existentes */
@@ -148,7 +101,7 @@
 }
 .contenido {
   flex: 1;
-  background-image: url("./../assets/images/library-with-books.jpg");
+  background-image: url("./../assets/images/library-with-books.jpg") !important;
   background-attachment: fixed;
   background-size: cover;
 }
@@ -164,7 +117,7 @@ h1 {
   background-color: #01589b5c;
   backdrop-filter: blur(10px);
   padding: 20px;
-  margin: 0 !important;
+  margin: 15px 0 0;
 }
 .descripcion {
   color: white;
@@ -292,9 +245,8 @@ h5 {
 }
 
 .logeo form {
-  min-height: 40vh;
   width: max-content;
-  padding: 40px 80px;
+  padding: 40px 0;
 }
 .logeo form button {
   background: deepskyblue;
@@ -313,7 +265,7 @@ h5 {
   color: white;
   text-align: center;
   border-radius: 30px;
-  padding: 40px 80px;
+  padding: 20px 0;
   border-left: 9px ridge #01579b;
   border-bottom: 4px ridge #01579b;
   font-size: 30px;
@@ -325,13 +277,34 @@ input + label {
   color: grey !important;
 }
 
-.logeo .formulario .ing h3{
+.logeo .formulario .ing h3 {
   margin: 0 !important;
+}
+
+input + label {
+  text-shadow: 2px 2px 3px black !important;
+}
+
+input:focus {
+  border-bottom: 1px solid grey !important;
+  box-shadow: 0 1px 0 0 grey !important;
+}
+
+input:focus + label {
+  color: grey !important;
 }
 
 @media (max-width: 600px) {
   .no-valign-mobile {
     align-items: unset !important;
     display: block !important;
+  }
+  .formulario {
+    justify-content: center;
+    align-items: unset !important;
+    display: block !important;
+  }
+  form {
+    width: 300px !important;
   }
 }

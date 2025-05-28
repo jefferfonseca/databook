@@ -2,10 +2,6 @@
 session_start();
 require_once 'cx.php';
 
-if (!isset($_SESSION['user_id']) || $_SESSION['tipo_usuario_id'] != 1) {
-    header('Location: ../login.php');
-    exit();
-}
 
 $id = intval($_GET['id'] ?? 0);
 if ($id > 0) {
