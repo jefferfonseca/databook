@@ -41,52 +41,6 @@ nav ul a {
   text-shadow: 2px 2px 3px black;
 }
 
-@media (max-width: 992px) {
-  /* Forzamos nav a crecer y nav-wrapper a columna */
-  nav {
-    height: auto !important;
-    min-height: auto !important;
-  }
-
-  nav .nav-wrapper {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    padding: 0 !important;
-  }
-
-  /* 1) Logo en fila 1, centrado */
-  nav .nav-wrapper .brand-logo {
-    order: 1 !important;
-    margin: 0.5rem 0 !important;
-  }
-
-  /* Quitamos cualquier margin-top inline */
-  nav .nav-wrapper .brand-logo img {
-    margin-top: 0 !important;
-  }
-
-  /* 2) Título en fila 2, siempre estático */
-  nav .nav-wrapper .nav-title {
-    order: 2 !important;
-    position: static !important;
-    transform: none !important;
-    margin: 3.5rem 0 0 !important;
-  }
-
-  /* 3) Hamburguesa en fila 3, anclada a la izquierda */
-  nav .nav-wrapper .sidenav-trigger {
-    order: 3 !important;
-    align-self: flex-start !important;
-    margin: 0.5rem 1rem !important;
-  }
-
-  /* Ocultamos el menú de escritorio */
-  nav .nav-wrapper .right.hide-on-med-and-down {
-    display: none !important;
-  }
-}
-
 .registro {
   background-color: var(--azul) !important;
   height: 80px !important;
@@ -183,11 +137,13 @@ p {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   max-width: 220px;
-  min-height: fit-content;
+  height: 500px !important;
   border-radius: 25px;
   margin: 15px;
   overflow: hidden;
   background-color: aliceblue;
+  border-left: 5px solid var(--azul);
+  border-bottom-left-radius: 25px;
 }
 .opciones {
   display: flex;
@@ -205,10 +161,9 @@ p {
 }
 .cards-body {
   border-top: 1px dotted var(--azul);
-  border-left: 5px solid var(--azul);
   padding: 2px 16px;
   color: black;
-  border-bottom-left-radius: 25px;
+
   position: relative;
 }
 .cards-body h4 {
@@ -306,5 +261,68 @@ input:focus + label {
   }
   form {
     width: 300px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Forzamos nav a crecer y nav-wrapper a columna */
+  nav {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  nav .nav-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 0 !important;
+    height: 120px !important;
+  }
+
+  /* 1) Logo en fila 1, centrado */
+  nav .nav-wrapper .brand-logo {
+    order: 1 !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  /* Quitamos cualquier margin-top inline */
+  nav .nav-wrapper .brand-logo img {
+    margin-top: 0 !important;
+  }
+
+  /* 2) Título en fila 2, siempre estático */
+  nav .nav-wrapper .nav-title {
+    order: 2 !important;
+    position: static !important;
+    transform: none !important;
+    margin: 3.5rem 0 0 !important;
+  }
+
+  /* 3) Hamburguesa en fila 3, anclada a la izquierda */
+  nav .nav-wrapper .sidenav-trigger {
+    order: 3 !important;
+    align-self: flex-start !important;
+    margin: 0.5rem 1rem !important;
+  }
+
+  /* Ocultamos el menú de escritorio */
+  nav .nav-wrapper .right.hide-on-med-and-down {
+    display: none !important;
+  }
+  .titulo {
+    font-size: 2rem;
+    margin: 0 !important;
+  }
+  .col {
+    padding: 0 !important;
+  }
+  .sedes {
+    text-align: center;
+  }
+  .card-content {
+    overflow: hidden !important;
+  }
+  .container {
+    width: 100% !important;
   }
 }

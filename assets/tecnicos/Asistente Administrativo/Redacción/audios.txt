@@ -1,0 +1,29 @@
+Bienvenida al curso|assets/audio/bienvenida.mp3
+Audio motivacional|assets/audio/motivacion.mp3
+Podcast de liderazgo|https://open.spotify.com/episode/1AbCdEfGhIjKlMnOpQrStUv
+Cuidado de la Voz en el Ámbito Laboral|https://open.spotify.com/episode/5xW62Sqw772QR3A0yPuQts?si=xbX_qLfSRmG-OW-FVg8r3g 
+
+Los signos de puntuación ignorados en la escritura|https://podcasts.apple.com/es/podcast/los-signos-de-puntuaci%C3%B3n-ignorados-en-la-escritura/id1552843584?i=1000516170722
+El uso y abuso de La Coma|https://podcasts.apple.com/es/podcast/el-uso-y-abuso-de-la-coma/id1552843584?i=1000508783988
+Las Mayusculas|https://podcasts.apple.com/es/podcast/las-mayusculas/id1552843584?i=1000508294660
+Consejos para redactar tus trabajos|https://podcasts.apple.com/es/podcast/consejos-para-redactar-tus-trabajos/id1537247955
+Tips para lograr una buena redacción de texto.|https://podcasts.apple.com/ca/podcast/tips-para-lograr-una-buena-redacci%C3%B3n-de-texto/id1558643418
+Tips para una redacción.|https://podcasts.apple.com/ca/podcast/tips-para-una-redacci%C3%B3n/id1558643418?i=1000513219665
+Escribir bien y corregir mejor.|https://carlosmalfatti.com/podcast/escribir-bien-y-corregir-mejor/ç
+Hablemos de: La redacción de Textos|https://podcasts.apple.com/dk/podcast/hablemos-de-la-redacci%C3%B3n-de-textos/id1585370815?i=1000534924750
+Redacción de informes técnicos y gerenciales|https://podcasts.apple.com/mx/podcast/redacci%C3%B3n-de-informes-t%C3%A9cnicos-y-gerenciales/id1552478158?i=1000590065907
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

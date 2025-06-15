@@ -85,7 +85,6 @@ if (!isset($_SESSION['user_id'])) {
             </a>
           </li>
         <?php endif; ?>
-
       </ul>
     </div>
   </nav>
@@ -104,13 +103,40 @@ if (!isset($_SESSION['user_id'])) {
     <li><a href="index.php"><i class="material-icons">home</i>Inicio</a></li>
     <li><a href="nosotros.php"><i class="material-icons">info</i>Sobre Nosotros</a></li>
     <li><a href="tecnicos.php"><i class="material-icons">build</i>Técnicos</a></li>
-    <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 1): ?>
+    <?php
+    // Asegúrate de haber hecho session_start() arriba del todo
+    if (!isset($_SESSION['rol'])): ?>
+      <!-- No hay sesión: mostramos solo Iniciar Sesión -->
+      <li class="active">
+        <a href="home.php">
+
+          <i class="material-icons left">login</i>
+          Iniciar Sesión
+        </a>
+      </li>
+
+    <?php elseif ($_SESSION['rol'] == 1): ?>
+      <!-- Usuario administrador -->
       <li><a href="registro.php"><i class="material-icons">people</i>Usuarios</a></li>
-      <li><a href="logout.php"><i class="material-icons">exit_to_app</i>Cerrar Sesión</a></li>
+      <li class="active">
+        <a href="backend/logout.php">
+          <i class="material-icons left">exit_to_app</i>
+          Cerrar Sesión
+        </a>
+      </li>
+
+    <?php else: ?>
+      <!-- Usuario normal (logueado, pero no admin) -->
+      <li class="active">
+        <a href="backend/logout.php">
+          <i class="material-icons left ">exit_to_app</i>
+          Cerrar Sesión
+        </a>
+      </li>
     <?php endif; ?>
   </ul>
 
-  <h1 class="center-align">Técnico Laboral en <?php echo $tecnico; ?></h1>
+  <h1 class="center-align titulo">Técnico Laboral en <?php echo $tecnico; ?></h1>
   <div class="container">
     <p class="descripcion">
       El técnico laboral en asistente administrativo está en la capacidad de
@@ -165,7 +191,9 @@ if (!isset($_SESSION['user_id'])) {
                                 <a href="<?= $url ?>" download>Descargar</a>
                               </div>
                               <div class="cards-body">
-                                <h4 class="titlulo-recursos"><?= htmlspecialchars($name) ?></h4>
+                                <h4 class="titlulo-recursos" title="<?= htmlspecialchars($name) ?>">
+                                  <?= htmlspecialchars($name) ?>
+                                </h4>
                               </div>
                             </div>
                             </a>
@@ -288,7 +316,7 @@ if (!isset($_SESSION['user_id'])) {
   <footer class="page-footer grey darken-3">
     <div class="row valign-wrapper no-valign-mobile">
       <div class="col s12 m5">
-        <h5 class="white-text">Sede Centro</h5>
+        <h5 class="white-text sedes">Sede Centro</h5>
 
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.2495717377706!2d-73.36888772271514!3d5.529946980140521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a7dd370d9df2f%3A0x8f347d9ae4bfe052!2sInstituto%20Cenis%20Tunja!5e0!3m2!1ses!2sco!4v1746559382054!5m2!1ses!2sco"
@@ -297,7 +325,7 @@ if (!isset($_SESSION['user_id'])) {
       </div>
 
       <div class="col s12 m5">
-        <h5 class="white-text">Sede Las Américas</h5>
+        <h5 class="white-text sedes">Sede Las Américas</h5>
 
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3971.2751122815375!2d-73.36562661627082!3d5.526139612127951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zMTI1OSBDbC4gMTMswqBUdW5qYSwgQm95YWPDoQ!5e0!3m2!1ses!2sco!4v1746560054815!5m2!1ses!2sco"
@@ -305,7 +333,7 @@ if (!isset($_SESSION['user_id'])) {
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="col s12 m3 center">
-        <h5 class="white-text">Contáctanos:</h5>
+        <h5 class="white-text sedes">Contáctanos:</h5>
         <a href="https://www.facebook.com/share/1HC8LmKRYK/"><i class="icon fab fa-facebook-f"></i>
         </a>
         <a href="https://www.instagram.com/cenistunja_?igsh=MXV0eWowNnBleTlnZw=="><i
@@ -348,6 +376,9 @@ if (!isset($_SESSION['user_id'])) {
   document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.collapsible');
     M.Collapsible.init(elems);
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    M.Sidenav.init(document.querySelectorAll(".sidenav"));
   });
 </script>
 </body>

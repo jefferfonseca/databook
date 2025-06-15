@@ -1,0 +1,39 @@
+Bienvenida al curso|assets/audio/bienvenida.mp3
+Audio motivacional|assets/audio/motivacion.mp3
+Podcast de liderazgo|https://open.spotify.com/episode/1AbCdEfGhIjKlMnOpQrStUv
+Cuidado de la Voz en el Ámbito Laboral|https://open.spotify.com/episode/5xW62Sqw772QR3A0yPuQts?si=xbX_qLfSRmG-OW-FVg8r3g 
+
+historia del diseño grafico|https://youtu.be/jrhal860low
+elementos visuales|https://youtu.be/ivdNulDcKBc
+fundamentos del diseño|https://youtu.be/7N2v0bpNFKA
+principios del diseño|https://youtu.be/gvejJ27CtKU
+jerarquía visual|https://youtu.be/_F4MTXXydWA
+como crear un gran diseño|https://youtu.be/gOLGXPb8Kr8
+teoría del color|https://youtu.be/MNKRUoKcWb0
+psicología del color|https://youtu.be/BszxeCW3V7Y
+la teoría del color|https://youtu.be/uuk566FtqpY
+tipografia|https://youtu.be/EbV3-AJQElQ
+psicología de la tipografia|https://youtu.be/8EucDWQDThg
+la tipografia y la fuente|https://youtu.be/M-MUn0Zi3yA
+disposición y composicion|https://youtu.be/gJhOHTOjGO8
+equilibrio visual|https://youtu.be/J04R5RuuIz0
+tendencias de diseño editorial|https://youtu.be/nRymEdWXZ74
+diseñar una revista|https://youtu.be/__ItyoA6JAw
+Qué relación hay entre CM y PÍXELES|https://youtu.be/HJkfgYsh9Eg
+formatos,resoluciones|https://youtu.be/ESyyEa_2-mA
+formato de imagenes|https://youtu.be/TMQeaHiK5qE
+identidad visual|https://youtu.be/C1KD4ZwsvsU
+Creando Nuestra Marca|https://youtu.be/YII_LkrXAb4
+Como DISEÑAR un POSTER o FLYER Publicitario en PHOTOSHOP|https://youtu.be/d_t2P6nRUAE
+Cómo hacer un Flyer PROFESIONAL en canva|https://youtu.be/liltbTfSu7Q
+programas para hacer flyer|https://youtu.be/6cINuO7zyU4
+diseño web|https://youtu.be/zFC7-I7CpnM
+packaging|https://youtu.be/2JqltICJ-54
+animacion|https://youtu.be/4vyquprm6sc
+señaletica|https://youtu.be/ha8lHN4OQMY
+illustrator|https://youtu.be/2PacAqKi4Uc
+illustrator vectorial|https://youtu.be/G97Wc5roT0Y
+Photoshop Fusionar Imágenes y crear Composiciones|https://youtu.be/I2gkyWmTamc
+Retoque De Piel Avanzado|https://youtu.be/OMhfnFVuL-M
+Photoshop Composición|https://youtu.be/jUxjFZQFsew
+arte generativo|https://youtu.be/NLWWoEPGFjE

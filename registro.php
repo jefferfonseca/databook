@@ -52,6 +52,7 @@ if (!isset($_SESSION['user_id'])) {
 <body class="contenido">
 
     <!-- Navbar principal -->
+    <!-- Navbar principal -->
     <nav class="">
         <div class="nav-wrapper ">
             <!-- Botón de Hamburguesa -->
@@ -65,11 +66,11 @@ if (!isset($_SESSION['user_id'])) {
             </a>
 
             <!-- Título centrado -->
-            <span class="nav-title white-text">DATABOOK </span>
+            <span class="nav-title white-text">DATABOOK</span>
 
             <!-- Menú desktop -->
             <ul class="right hide-on-med-and-down">
-                <li class=""><a href="index.php">Inicio</a></li>
+                <li class="active"><a href="index.php">Inicio</a></li>
                 <li class=""><a href="nosotros.php">Sobre Nosotros</a></li>
                 <li class=""><a href="tecnicos.php">Técnicos</a></li>
                 <?php
@@ -86,7 +87,7 @@ if (!isset($_SESSION['user_id'])) {
 
                 <?php elseif ($_SESSION['rol'] == 1): ?>
                     <!-- Usuario administrador -->
-                    <li class="active"><a href="registro.php">Usuarios</a></li>
+                    <li><a href="registro.php">Usuarios</a></li>
                     <li class="active">
                         <a href="backend/logout.php">
                             <i class="material-icons left">exit_to_app</i>
@@ -118,9 +119,9 @@ if (!isset($_SESSION['user_id'])) {
         <li>
             <div class="divider"></div>
         </li>
-        <li class=""><a href="index.php">Inicio</a></li>
-        <li class=""><a href="nosotros.php">Sobre Nosotros</a></li>
-        <li class=""><a href="tecnicos.php">Técnicos</a></li>
+        <li><a href="index.php"><i class="material-icons">home</i>Inicio</a></li>
+        <li><a href="nosotros.php"><i class="material-icons">info</i>Sobre Nosotros</a></li>
+        <li><a href="tecnicos.php"><i class="material-icons">build</i>Técnicos</a></li>
         <?php
         // Asegúrate de haber hecho session_start() arriba del todo
         if (!isset($_SESSION['rol'])): ?>
@@ -135,7 +136,7 @@ if (!isset($_SESSION['user_id'])) {
 
         <?php elseif ($_SESSION['rol'] == 1): ?>
             <!-- Usuario administrador -->
-            <li class="active"><a href="registro.php">Usuarios</a></li>
+            <li><a href="registro.php"><i class="material-icons">people</i>Usuarios</a></li>
             <li class="active">
                 <a href="backend/logout.php">
                     <i class="material-icons left">exit_to_app</i>
@@ -201,7 +202,6 @@ if (!isset($_SESSION['user_id'])) {
                             <option value="" disabled selected>Selecciona un Tipo de Usuario</option>
                             <option value="1">Administrador</option>
                             <option value="2">Estudiante</option>
-                            <option value="3">Docente</option>
                         </select>
                         <label for="tipo_usuario">Tipo de Usuario</label>
                     </div>
@@ -215,7 +215,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
 
         <!-- Tabla de Usuarios Registrados -->
-        <h5 class="white-text">Usuarios Registrados</h5>
+        <h5 class="white-text sedes">Usuarios Registrados</h5>
         <table class="striped responsive-table blue-grey lighten-3">
             <thead class="white">
                 <tr>
@@ -265,7 +265,35 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 
     <!-- Scripts -->
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Inicializar Carrusel
+            $(".carousel.carousel-slider").carousel({
+                fullWidth: true,
+                indicators: true,
+            });
+
+            // Avanzar cada 3 segundos
+            setInterval(function () {
+                $(".carousel.carousel-slider").carousel("next");
+            }, 3000);
+
+            // Inicializa el sidenav
+            $('.sidenav').sidenav({
+                edge: 'left',
+                draggable: true
+            });
+
+            // Cierra el sidenav al hacer clic en cualquier enlace
+            $('.sidenav a').on('click', function () {
+                var instance = M.Sidenav.getInstance($('.sidenav'));
+                instance.close();
+            });
+        });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             M.FormSelect.init(document.querySelectorAll('select'));

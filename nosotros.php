@@ -99,7 +99,7 @@ error_reporting(0);
     <?php endif; ?>
   </ul>
 
-  <h1 class="center-align"><b>DATABOOK</b></h1>
+  <h1 class="center-align titulo"><b>DATABOOK</b></h1>
   <div class="container">
     <p class="descripcion">
       DataBook es un espacio creado para potenciar la formación de los
@@ -107,13 +107,13 @@ error_reporting(0);
       proporcionar acceso sencillo y organizado a una amplia varidead de
       recursos educativos multimedia, que incluyen, libros, videos y audios.
     </p>
-    <div class="center"><img src="assets/images/logo_pro.png" alt="logo" /></div>
+    <div class="center"><img src="assets/images/logo_pro.png"  class ="responsive-img" alt="logo" /></div>
   </div>
   <!--pie de pagina-->
   <footer class="page-footer grey darken-3">
     <div class="row valign-wrapper no-valign-mobile">
       <div class="col s12 m5">
-        <h5 class="white-text">Sede Centro</h5>
+        <h5 class="white-text sedes">Sede Centro</h5>
 
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.2495717377706!2d-73.36888772271514!3d5.529946980140521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a7dd370d9df2f%3A0x8f347d9ae4bfe052!2sInstituto%20Cenis%20Tunja!5e0!3m2!1ses!2sco!4v1746559382054!5m2!1ses!2sco"
@@ -122,7 +122,7 @@ error_reporting(0);
       </div>
 
       <div class="col s12 m5">
-        <h5 class="white-text">Sede Las Américas</h5>
+        <h5 class="white-text sedes">Sede Las Américas</h5>
 
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3971.2751122815375!2d-73.36562661627082!3d5.526139612127951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zMTI1OSBDbC4gMTMswqBUdW5qYSwgQm95YWPDoQ!5e0!3m2!1ses!2sco!4v1746560054815!5m2!1ses!2sco"
@@ -130,7 +130,7 @@ error_reporting(0);
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="col s12 m3 center">
-        <h5 class="white-text">Contáctanos:</h5>
+        <h5 class="white-text sedes">Contáctanos:</h5>
         <a href="https://www.facebook.com/share/1HC8LmKRYK/"><i class="icon fab fa-facebook-f"></i>
         </a>
         <a href="https://www.instagram.com/cenistunja_?igsh=MXV0eWowNnBleTlnZw=="><i
